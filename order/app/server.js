@@ -1,0 +1,25 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const orderRoutes = require('./order');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+
+dotenv.config();
+const app = express();
+const PORT = 3000;
+
+const mongoURI = process.env.MONGO_URI || 'mongodb://admin:password@localhost:27019/order-db?authSource=admin';
+
+app.use(cors());
+app.use(bodyParser.json());
+
+mongoose.connect(mongoURI)
+    .then(() => console.log('Connected to MongoDB cart'))
+    .catch(err => console.error('Could not connect to MongoDB cart:', err));
+
+app.use('/api/order', orderRoutes);
+
+app.listen(PORT, () => {
+    console.log(`Server order is running on http://0.0.0.0:${PORT}`);
+});

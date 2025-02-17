@@ -1,0 +1,48 @@
+<header class="bg-white top-0 left-0 right-0 z-10 py-2">
+  <nav class="flex ">
+    <div class="flex justify-center items-center w-1/2">
+      <button (click)="goToHome()">
+        <p class="text-2xl text-[#115efb] font-semibold font-rubik">Gadget <span class=" text-black">Hub</span></p>
+      </button>
+    </div>
+    <div class="flex justify-center items-center w-1/2">
+
+      <div>
+        <button (click)="goToCatalog()" [ngClass]="{ 'bg-[#f2f5f9]': currentRoute === '/catalog' }"
+          class="px-5 py-3 gap-3 bg-transparent text-gray-800 font-bold rounded inline-flex items-center hover:bg-[#f2f5f9]">
+          <img src="/assets/icons/catalog.svg" alt="catalog_icon">
+          <span class="text-[#115efb] text-base font-medium font-rubik">Каталог</span>
+        </button>
+      </div>
+
+      <div class="flex" *ngIf="isLoggedIn">
+        <button (click)="goToCart()"
+          class="px-2 py-3 gap-3 bg-transparent text-gray-800 font-bold rounded inline-flex items-center hover:bg-[#f2f5f9]">
+          <img src="/assets/icons/profile.svg" alt="catalog_icon">
+          <span class="text-[#115efb] text-base font-medium font-rubik">Корзина</span>
+          <div *ngIf="cartQuantity > 0" class="self-center w-6 h-6 bg-[#ff60c3] rounded-full ">
+            <span class="text-white font-normal">{{cartQuantity }}</span>
+          </div>
+        </button>
+
+      </div>
+
+      <div *ngIf="isLoggedIn">
+        <button (click)="logout()"
+          class="px-5 py-3 gap-3 bg-transparent text-gray-800 font-bold rounded inline-flex items-center hover:bg-[#f2f5f9] focus:border-[#84adff]">
+          <img src="/assets/icons/profile.svg" alt="profile_icon">
+          <span class="text-[#115efb] text-base font-medium font-rubik">Выйти</span>
+        </button>
+      </div>
+
+      <div *ngIf="!isLoggedIn">
+        <button (click)="goToLogin()"
+          class="px-5 py-3 gap-3 bg-transparent text-gray-800 font-bold rounded inline-flex items-center hover:bg-[#f2f5f9]">
+          <img src="/assets/icons/profile.svg" alt="catalog_icon">
+          <span class="text-[#115efb] text-base font-medium font-rubik">Войти</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+</header>

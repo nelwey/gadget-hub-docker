@@ -1,0 +1,99 @@
+<shared-header></shared-header>
+<div class="text-white">
+  <!-- banner -->
+  <div class="flex w-full mb-16">
+    <img class="w-2/3 mx-auto" src="/assets/images/banner1.png" alt="">
+  </div>
+  <!-- житы продаж -->
+  <div class="flex w-2/3 mx-auto mb-16">
+    <div class="w-1/4">
+      <img src="/assets/icons/subtract.svg" alt="subtract" class="size-8">
+      <p class="text-black font-medium text-2xl font-rubik">Хиты продаж</p>
+      <p class="text-[#7b7b7b] text-base font-rubik">Тысячи покупателей уже одобрили эти товары. Самые популярные,
+        проверенные и надежные гаджеты!</p>
+    </div>
+    <div class="flex w-3/4">
+      <shared-slide [slide]="hitItems"></shared-slide>
+    </div>
+  </div>
+  <!-- Новинки -->
+  <div class="flex w-2/3 mx-auto mb-16">
+    <div class="w-1/4">
+      <img src="/assets/icons/stars2.svg" alt="stars2" class="size-8">
+      <p class="text-black font-medium text-2xl font-rubik">Новинки</p>
+      <p class="text-[#7b7b7b] text-base font-rubik">Их только произвели - они уже у нас! Все самое новое и свежее на
+        рынке электроники!</p>
+    </div>
+    <div class="flex w-3/4">
+      <shared-slide [slide]="newItems"></shared-slide>
+    </div>
+  </div>
+  <!-- Преимущества -->
+  <div class="flex flex-col w-2/3 mx-auto mb-16">
+    <div class="flex mb-10">
+      <h1 class="text-black text-2xl font-medium font-rubik">Преимущества</h1>
+    </div>
+    <div class="flex justify-between">
+
+      <div class="bg-[#f4f4f4] rounded-3xl p-4 w-[320px]">
+        <div>
+          <img class="size-12" src="/assets/icons/rocket.svg" alt="">
+        </div>
+        <div>
+          <p class="text-black text-xl font-medium font-rubik">Утром заказали, вечером получили</p>
+        </div>
+      </div>
+
+      <div class="bg-[#f4f4f4] rounded-3xl p-4 w-[320px]">
+        <div>
+          <img class="size-12" src="/assets/icons/rublei.svg" alt="">
+        </div>
+        <div>
+          <p class="text-black text-xl font-medium font-rubik">С товаром что-то не так? Вернем деньги</p>
+        </div>
+      </div>
+
+      <div class="bg-[#f4f4f4] rounded-3xl p-4 w-[320px]">
+        <div>
+          <img class="size-12" src="/assets/icons/clarity_license-solid.svg" alt="">
+        </div>
+        <div>
+          <p class="text-black text-xl font-medium font-rubik">Только оригинальные товары</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Работаем 24/7 -->
+  <div class="flex flex-col w-2/3 mx-auto mb-16">
+    <div class="flex mb-10">
+      <h1 class="text-black text-2xl font-medium font-rubik">Работаем 24/7</h1>
+    </div>
+    <div class="flex justify-between">
+
+      <div class="flex gap-2 w-[340px]">
+        <div>
+          <img class="size-10" src="/assets/icons/phone.svg" alt="">
+        </div>
+        <div><p class="text-black font-medium text-xl font-rubik">8 (800) 678-34-24</p></div>
+      </div>
+
+      <div class="flex gap-2 w-[340px]">
+        <div>
+          <img class="size-10" src="/assets/icons/envelope.svg" alt="">
+        </div>
+        <div><p class="text-black font-medium text-xl font-rubik">{{email}}</p></div>
+      </div>
+
+      <div class="flex gap-2 w-[340px]">
+        <div>
+          <img class="size-10" src="/assets/icons/location.svg" alt="">
+        </div>
+        <div><p class="text-black font-medium text-xl font-rubik">Санкт-Петербург, ул. Барочная, д.7, корпус 2</p></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<shared-footer></shared-footer>

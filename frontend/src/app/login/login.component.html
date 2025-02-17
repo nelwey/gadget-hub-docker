@@ -1,0 +1,30 @@
+<shared-header></shared-header>
+
+<div
+  class="flex flex-col items-center justify-center w-full h-screen bg-[#e0f1ff] bg-[url('/assets/images/bg.png')] bg-no-repeat bg-cover bg-center">
+  <h2 class="text-2xl font-medium mb-4 text-center font-rubik">Добро пожаловать!</h2>
+  <form class="bg-white rounded-lg flex flex-col p-8 gap-8">
+
+    <div class="w-[286px] h-[73px] flex-col justify-center items-start gap-1 inline-flex">
+      <div class="text-black text-sm font-normal font-['Inter'] leading-[21px]">Логин</div>
+      <img class="size-2 self-end" src="/assets/icons/asterisk.svg" alt="asterisk">
+      <input name="email" [(ngModel)]="email" type="text" class="self-stretch px-4 py-3 bg-[#e4e7eb] rounded-lg justify-start items-center gap-2.5 inline-flex" />
+    </div>
+
+    <div class="w-[286px] h-[73px] flex-col justify-center items-start gap-1 inline-flex">
+      <div class="text-black text-sm font-normal font-['Inter'] leading-[21px]">Пароль</div>
+      <img class="size-2 self-end" src="/assets/icons/asterisk.svg" alt="asterisk">
+      <input name="password" [(ngModel)]="password" type="password" class="self-stretch px-4 py-3 bg-[#e4e7eb] rounded-lg justify-start items-center gap-2.5 inline-flex" />
+    </div>
+
+    <div>
+      <button (click)="login()" class="h-12 px-8 py-3 bg-[#115efb] rounded-lg justify-center items-center gap-3 inline-flex">
+        <div class="text-white text-base font-medium font-['Rubik'] leading-normal">Войти</div>
+      </button>
+    </div>
+
+
+  </form>
+</div>
+
+<shared-footer></shared-footer>
