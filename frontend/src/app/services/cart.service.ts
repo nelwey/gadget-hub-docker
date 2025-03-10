@@ -14,20 +14,20 @@ export class CartService {
   currentCartQuantity = this.cartQuantitySource.asObservable();
 
   getCart(): Observable<any[]> {
-    let userId = this.authService.getUserId();
+    const userId = this.authService.getUserId();
     return this.http.get<any[]>(`${this.apiUrl}/${userId}`);
   }
   addToCart(productId: number, quantity: number, price: number, src: string, title: string): Observable<any> {
-    let userId = this.authService.getUserId();
+    const userId = this.authService.getUserId();
     const newCartItem = { productId, quantity };
     this.cart.push(newCartItem);
-    let updatedQuantity = this.cartQuantitySource.value + 1;
+    const updatedQuantity = this.cartQuantitySource.value + 1;
     this.cartQuantitySource.next(updatedQuantity);
     return this.http.post(`${this.apiUrl}/add`, { userId, productId, quantity, price, subtotal: 0, src, title });
   }
 
   removeFromCart(productId: number): Observable<any> {
-    let userId = this.authService.getUserId();
+    const userId = this.authService.getUserId();
     this.cart = this.cart.filter(product => product.productId !== productId);
     this.updateCartQuantityTotal();
     return this.http.delete(`${this.apiUrl}/delete/${userId}/${productId}`);

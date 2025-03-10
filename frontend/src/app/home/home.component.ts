@@ -17,7 +17,7 @@ import { SlideComponent } from '../shared/components/slide/slide.component';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  public email: string = "gadget@hub.ru";
+  public email = "gadget@hub.ru";
   public hitItems: any[] = [
     { status: "Хит", src: "/assets/images/image1.png", price: 49990, description: "Шлем виртуальной реальности 128...", rating: "4,8" },
     { status: "Хит", src: "/assets/images/image2.png", price: 10590, description: "Аппаратный ключ аутентификации...", rating: "5" },

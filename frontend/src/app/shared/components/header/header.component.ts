@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { CartService } from '../../../services/cart.service';
@@ -13,10 +13,10 @@ import { CartService } from '../../../services/cart.service';
   templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit {
-  public isLoggedIn: boolean = false;
-  public currentRoute: string = '';
+  public isLoggedIn = false;
+  public currentRoute = '';
 
-  cartQuantity: number = 0;
+  cartQuantity = 0;
 
   constructor(public authService: AuthService, private router: Router, private cartService: CartService) {
     this.router.events.subscribe(() => {

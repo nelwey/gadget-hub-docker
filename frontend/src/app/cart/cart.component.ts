@@ -32,7 +32,7 @@ export class CartComponent implements OnInit {
 
   public cartItems: any[] = [];
   public orders: Order[] = [];
-  public selectedTab: string = 'cart';
+  public selectedTab = 'cart';
   public selectedProduct: Product | null = null;
 
   public paymentMethods = [
@@ -41,12 +41,12 @@ export class CartComponent implements OnInit {
   ];
   public selectedPaymentMethod: string = this.paymentMethods[0].value;
 
-  public selectedTypeOrder: string = "Самовывоз";
+  public selectedTypeOrder = "Самовывоз";
 
-  public showOrderModal: boolean = false;
-  public selectAllChecked: boolean = false;
+  public showOrderModal = false;
+  public selectAllChecked = false;
 
-  public orderNumber: string = "";
+  public orderNumber = "";
 
   toggleSelectAll() {
     this.cartItems.forEach(product => product.selected = this.selectAllChecked);
@@ -106,7 +106,7 @@ export class CartComponent implements OnInit {
   removeItem() {
     if (this.selectedProduct) {
       this.cartService.removeFromCart(this.selectedProduct.id).subscribe({
-        next: (response) => {
+        next: () => {
           this.loadCart();
           this.closeModal();
         },
@@ -120,7 +120,7 @@ export class CartComponent implements OnInit {
     if (selectedProducts.length > 0) {
       selectedProducts.forEach(product => {
         this.cartService.removeFromCart(product.id).subscribe({
-          next: (response) => {
+          next: () => {
             console.log(`Product with ID ${product.id} removed from cart.`);
             this.loadCart();
           },
@@ -133,7 +133,7 @@ export class CartComponent implements OnInit {
   removeAllItems() {
     this.cartItems.forEach(item => {
       this.cartService.removeFromCart(item.productId).subscribe({
-        next: (response) => {
+        next: () => {
           this.ngOnInit();
         },
         error: (err) => console.error('Error removing product from cart:', err),
@@ -158,7 +158,7 @@ export class CartComponent implements OnInit {
   }
   updateCartQuantity(product: any, quantity: number, action: string) {
     this.cartService.updateProductQuantity(product.productId, quantity, action, product.price).subscribe({
-      next: (response) => {
+      next: () => {
         this.loadCart();
       },
       error: (err) => console.error(err),
@@ -181,8 +181,7 @@ export class CartComponent implements OnInit {
       total: this.total
     }
     this.orderService.addOrder(newOrder).subscribe({
-      next: (response) => {
-        console.log("response: ", response);
+      next: () => {
         this.openOrderModal();
         this.removeAllItems();
       },

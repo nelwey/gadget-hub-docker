@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product.model';
@@ -51,29 +51,29 @@ export class CatalogComponent implements OnInit {
   ];
   public cartProducts: any[] = [];
   public products: Product[] = [];
-  public isCartEmpty: boolean = true;
+  public isCartEmpty = true;
   public selectedProduct: Product | null = null;
-  public productQuantity: number = 1;
-  public showModal: boolean = false;
+  public productQuantity = 1;
+  public showModal = false;
 
-  public itemsPerPage: number = 9;
-  public currentPage: number = 1;
+  public itemsPerPage = 9;
+  public currentPage = 1;
   public paginatedProducts: Product[] = [];
-  public showPrevButton: boolean = false;
+  public showPrevButton = false;
 
   public selectedColors: string[] = [];
   public filteredProducts: Product[] = [];
 
   public selectedTypes: string[] = [];
 
-  minHandleValue: number = 2990;
-  maxHandleValue: number = 167890;
+  minHandleValue = 2990;
+  maxHandleValue = 167890;
   sliderOptions: Options = {
     floor: 0,
     ceil: 200000,
     step: 10,
-    getSelectionBarColor: (value: number): string => { return '#00E398' },
-    getPointerColor: (value: number): string => { return '#115EFB' }
+    getSelectionBarColor: (): string => { return '#00E398' },
+    getPointerColor: (): string => { return '#115EFB' }
   };
 
   ngOnInit(): void {
@@ -194,7 +194,7 @@ export class CatalogComponent implements OnInit {
   }
   updateCartQuantity(product: Product, quantity: number, action: string) {
     this.cartService.updateProductQuantity(product.id, quantity, action, product.price).subscribe({
-      next: (response) => {
+      next: () => {
         this.loadCart();
       },
       error: (err) => console.error(err),
@@ -204,7 +204,7 @@ export class CatalogComponent implements OnInit {
     this.selectedProduct = product ? product : this.selectedProduct;
     if (this.selectedProduct) {
       this.cartService.addToCart(this.selectedProduct.id, this.productQuantity, this.selectedProduct.price, this.selectedProduct.src, this.selectedProduct.title).subscribe({
-        next: (response) => {
+        next: () => {
           this.loadCart();
         },
         error: (err) => console.error(err),

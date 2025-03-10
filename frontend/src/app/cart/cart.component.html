@@ -28,7 +28,7 @@
             </label>
             <button (click)="removeAllSelectedItems()" *ngIf="selectAllChecked"
               class="bg-transparent justify-center gap-3 inline-flex h-fit">
-              <img src="/assets/icons/deleteCart.svg" class="self-center" />
+              <img src="/assets/icons/deleteCart.svg" class="self-center" alt="deleteCart" />
               <p class="text-[#ff60c3] text-base  font-rubik leading-normal">Удалить все</p>
             </button>
           </div>
@@ -50,7 +50,7 @@
               <div class="flex gap-6 w-40">
                 <div>
                   <button (click)="decreaseQuantity(product)" class="size-6 bg-[#e4e7eb] rounded">
-                    <img src="/assets/icons/minus.svg" class="mx-auto" />
+                    <img src="/assets/icons/minus.svg" class="mx-auto" alt="minus" />
                   </button>
                 </div>
 
@@ -58,14 +58,14 @@
 
                 <div>
                   <button (click)="increaseQuantity(product)" class="size-6 bg-[#e4e7eb] rounded">
-                    <img src="/assets/icons/plus.svg" class="mx-auto" />
+                    <img src="/assets/icons/plus.svg" class="mx-auto" alt="plus" />
                   </button>
                 </div>
               </div>
               <p class="text-black text-lg font-medium font-rubik leading-7 w-40">{{product.subtotal}} ₽</p>
 
               <button (click)="openModal(product)" class="bg-transparent justify-center gap-3 inline-flex h-fit">
-                <img src="/assets/icons/deleteCart.svg" class="self-center" />
+                <img src="/assets/icons/deleteCart.svg" class="self-center" alt="deleteCart" />
                 <p class="text-[#ff60c3] text-base  font-rubik leading-normal">Удалить</p>
               </button>
             </div>
@@ -119,31 +119,37 @@
             <!-- radio buttons -->
             <div class="flex gap-3">
               <div class="flex items-center">
-                <input [(ngModel)]="selectedTypeOrder" [value]="'Самовывоз'" type="radio"
-                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300" />
-                <label class="ms-2 text-sm">Самовывоз</label>
+
+                <label class="ms-2 text-sm">Самовывоз
+                  <input [(ngModel)]="selectedTypeOrder" [value]="'Самовывоз'" type="radio"
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300" />
+                </label>
               </div>
 
               <div class="flex items-center">
-                <input [(ngModel)]="selectedTypeOrder" [value]="'Доставка'" type="radio"
-                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300">
-                <label class="ms-2 text-sm">Доставка</label>
+                <label class="ms-2 text-sm">Доставка
+                  <input [(ngModel)]="selectedTypeOrder" [value]="'Доставка'" type="radio"
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300">
+                </label>
               </div>
             </div>
 
             <div>
-              <label class="block mb-2 text-black text-sm font-inter leading-[21px]">{{selectedTypeOrder === 'Самовывоз'
-                ? 'Способ оплаты': 'Адрес доставки'}}</label>
+              <label class="block mb-2 text-black text-sm font-inter leading-[21px]" [attr.for]="selectedTypeOrder === 'Самовывоз' ? 'paymentMethodSelect' : 'deliveryAddressInput'">
+                {{ selectedTypeOrder === 'Самовывоз' ? 'Способ оплаты' : 'Адрес доставки' }}
+              </label>
 
-              <select *ngIf="selectedTypeOrder === 'Самовывоз'" [(ngModel)]="selectedPaymentMethod"
-                (change)="onChangePaymentMethod($event)" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-4
-              py-3 bg-[#e4e7eb] w-1/4">
-
+              <select *ngIf="selectedTypeOrder === 'Самовывоз'" id="paymentMethodSelect" [(ngModel)]="selectedPaymentMethod"
+                (change)="onChangePaymentMethod($event)" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-4 py-3 bg-[#e4e7eb] w-1/4">
                 <option [value]="null" disabled selected>Select an option</option>
               </select>
 
-              <input type="text" *ngIf="selectedTypeOrder === 'Доставка'"
+              <input *ngIf="selectedTypeOrder === 'Доставка'" id="deliveryAddressInput" type="text"
                 class="self-stretch px-4 py-3 bg-[#e4e7eb] rounded-lg justify-start items-center gap-2.5 inline-flex w-1/2" />
+
+
+
+
 
             </div>
 
@@ -216,7 +222,7 @@
 
     <div class="flex flex-col gap-2">
       <div>
-        <img src="/assets/icons/happyOrder.svg" />
+        <img src="/assets/icons/happyOrder.svg" alt="happyOrder" />
       </div>
       <p class="text-2xl font-medium font-rubik">Спасибо за заказ!</p>
       <p class="text-base font-rubik">Номер заказа {{orderNumber}}.</p>

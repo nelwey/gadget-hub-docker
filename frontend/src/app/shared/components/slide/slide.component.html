@@ -7,18 +7,18 @@
     <div class="bg-[#eceff3] flex flex-col rounded-lg border-none w-56 h-60">
       <div class="text-end p-2">
         <span class="text-white text-xs font-medium font-rubik p-2 rounded-full"
-          [ngClass]="image.status == 'Хит' ? 'bg-[#ff60c3]' : 'bg-[#00e398]'">
+          [ngClass]="image.status === 'Хит' ? 'bg-[#ff60c3]' : 'bg-[#00e398]'">
           {{image.status}} </span>
       </div>
       <div>
-        <img class="mx-auto object-contain w-40 h-40" [src]="image.src" alt="">
+        <img class="mx-auto object-contain w-40 h-40" [src]="image.src" alt="visibleSlide">
       </div>
     </div>
     <div>
       <p class="text-xl text-black font-medium font-rubik">{{image.price}} ₽</p>
       <p class="text-[#474747] text-sm font-rubik"> {{image.description}}</p>
     </div>
-    <div  class="flex gap-2" *ngIf="image.rating != ''">
+    <div class="flex gap-2" *ngIf="image.rating !== ''">
       <img src="/assets/icons/star.svg" alt="star">
       <span class="text-sm text-[#474747]">{{image.rating}}</span>
     </div>
