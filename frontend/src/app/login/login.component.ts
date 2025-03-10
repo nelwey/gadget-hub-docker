@@ -15,25 +15,25 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     HeaderComponent,
     FooterComponent,
-    FormsModule
+    FormsModule,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-
-  constructor(private authService: AuthService,private router: Router) { }
-  public email = "";
-  public password = "";
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+  ) {}
+  public email = '';
+  public password = '';
   public errorMessage = '';
-
 
   login(): void {
     console.log(`login: ${this.email}, ${this.password}`);
     this.authService.login(this.email, this.password).subscribe({
       next: () => this.router.navigate(['/catalog']),
-      error: (err) => this.errorMessage = err
+      error: (err) => (this.errorMessage = err),
     });
   }
-
 }

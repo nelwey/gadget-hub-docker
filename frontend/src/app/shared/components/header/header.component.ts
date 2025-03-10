@@ -7,9 +7,7 @@ import { CartService } from '../../../services/cart.service';
 @Component({
   selector: 'shared-header',
   standalone: true,
-  imports: [
-    CommonModule,
-  ],
+  imports: [CommonModule],
   templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit {
@@ -18,7 +16,11 @@ export class HeaderComponent implements OnInit {
 
   cartQuantity = 0;
 
-  constructor(public authService: AuthService, private router: Router, private cartService: CartService) {
+  constructor(
+    public authService: AuthService,
+    private router: Router,
+    private cartService: CartService,
+  ) {
     this.router.events.subscribe(() => {
       this.currentRoute = this.router.url;
     });
@@ -38,7 +40,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoggedIn = this.authService.isLoggedIn();
-    this.cartService.currentCartQuantity.subscribe(quantity => {
+    this.cartService.currentCartQuantity.subscribe((quantity) => {
       this.cartQuantity = quantity;
     });
   }

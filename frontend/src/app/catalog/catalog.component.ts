@@ -21,33 +21,36 @@ import { NgxSliderModule, Options } from '@angular-slider/ngx-slider';
     HeaderComponent,
     FooterComponent,
     FormsModule,
-    NgxSliderModule
+    NgxSliderModule,
   ],
   templateUrl: './catalog.component.html',
 })
-
 export class CatalogComponent implements OnInit {
-  constructor(private cartService: CartService, private productService: ProductService, private router: Router) { }
+  constructor(
+    private cartService: CartService,
+    private productService: ProductService,
+    private router: Router,
+  ) {}
 
   public typeFilters: Filter[] = [
-    { type: "Смартфоны", value: 'Smartphones' },
-    { type: "Портативная акустика", value: 'PortableAcoustics' },
-    { type: "Очки виртуальной реальности", value: 'VirtualRealityGlasses' },
-    { type: "Умные часы", value: 'SmartWatches' },
-    { type: "Другое", value: 'Other' },
-    { type: "Внешний Аккумулятор", value: 'ExternalBattery' },
-    { type: "Наушники", value: 'Headphones' },
+    { type: 'Смартфоны', value: 'Smartphones' },
+    { type: 'Портативная акустика', value: 'PortableAcoustics' },
+    { type: 'Очки виртуальной реальности', value: 'VirtualRealityGlasses' },
+    { type: 'Умные часы', value: 'SmartWatches' },
+    { type: 'Другое', value: 'Other' },
+    { type: 'Внешний Аккумулятор', value: 'ExternalBattery' },
+    { type: 'Наушники', value: 'Headphones' },
   ];
   public colorFilters: Color[] = [
-    { color: "Красный", value: 'red' },
-    { color: "Желтый", value: 'yellow' },
-    { color: "Белый", value: 'white' },
-    { color: "Зеленый", value: 'green' },
-    { color: "Голубой", value: 'lightblue' },
-    { color: "Синий", value: 'blue' },
-    { color: "Фиолетовый", value: 'purple' },
-    { color: "Розовый", value: 'pink' },
-    { color: "Чёрный", value: 'black' }
+    { color: 'Красный', value: 'red' },
+    { color: 'Желтый', value: 'yellow' },
+    { color: 'Белый', value: 'white' },
+    { color: 'Зеленый', value: 'green' },
+    { color: 'Голубой', value: 'lightblue' },
+    { color: 'Синий', value: 'blue' },
+    { color: 'Фиолетовый', value: 'purple' },
+    { color: 'Розовый', value: 'pink' },
+    { color: 'Чёрный', value: 'black' },
   ];
   public cartProducts: any[] = [];
   public products: Product[] = [];
@@ -72,8 +75,12 @@ export class CatalogComponent implements OnInit {
     floor: 0,
     ceil: 200000,
     step: 10,
-    getSelectionBarColor: (): string => { return '#00E398' },
-    getPointerColor: (): string => { return '#115EFB' }
+    getSelectionBarColor: (): string => {
+      return '#00E398';
+    },
+    getPointerColor: (): string => {
+      return '#115EFB';
+    },
   };
 
   ngOnInit(): void {
@@ -92,16 +99,21 @@ export class CatalogComponent implements OnInit {
     });
   }
 
-
   filterByType(): void {
     this.filterProducts();
   }
 
   filterProducts(): void {
-    this.filteredProducts = this.products.filter(product => {
-      const matchesColor = !this.selectedColors.length || (product.color && this.selectedColors.includes(product.color));
-      const matchesType = !this.selectedTypes.length || (product.category && this.selectedTypes.includes(product.category));
-      const matchesPrice = product.price >= this.minHandleValue && product.price <= this.maxHandleValue;
+    this.filteredProducts = this.products.filter((product) => {
+      const matchesColor =
+        !this.selectedColors.length ||
+        (product.color && this.selectedColors.includes(product.color));
+      const matchesType =
+        !this.selectedTypes.length ||
+        (product.category && this.selectedTypes.includes(product.category));
+      const matchesPrice =
+        product.price >= this.minHandleValue &&
+        product.price <= this.maxHandleValue;
       return matchesColor && matchesType && matchesPrice;
     });
     this.currentPage = 1;
@@ -110,7 +122,7 @@ export class CatalogComponent implements OnInit {
 
   toggleColorSelection(color: string): void {
     if (this.selectedColors.includes(color)) {
-      this.selectedColors = this.selectedColors.filter(c => c !== color);
+      this.selectedColors = this.selectedColors.filter((c) => c !== color);
     } else {
       this.selectedColors.push(color);
     }
@@ -119,7 +131,7 @@ export class CatalogComponent implements OnInit {
 
   toggleTypeSelection(type: string): void {
     if (this.selectedTypes.includes(type)) {
-      this.selectedTypes = this.selectedTypes.filter(t => t !== type);
+      this.selectedTypes = this.selectedTypes.filter((t) => t !== type);
     } else {
       this.selectedTypes.push(type);
     }
@@ -157,8 +169,8 @@ export class CatalogComponent implements OnInit {
   loadCart(): void {
     this.cartService.getCart().subscribe({
       next: (cartProducts: any) => {
-        this.cartProducts = cartProducts
-      }
+        this.cartProducts = cartProducts;
+      },
     });
   }
 
@@ -183,44 +195,56 @@ export class CatalogComponent implements OnInit {
   }
   increaseQuantity(product: Product) {
     if (product && this.isInCart(product)) {
-      this.updateCartQuantity(product, 1, "increase");
+      this.updateCartQuantity(product, 1, 'increase');
     }
   }
 
   decreaseQuantity(product: Product) {
     if (product && this.isInCart(product)) {
-      this.updateCartQuantity(product, 1, "decrease");
+      this.updateCartQuantity(product, 1, 'decrease');
     }
   }
   updateCartQuantity(product: Product, quantity: number, action: string) {
-    this.cartService.updateProductQuantity(product.id, quantity, action, product.price).subscribe({
-      next: () => {
-        this.loadCart();
-      },
-      error: (err) => console.error(err),
-    });
-  }
-  addToCart(product?: Product) {
-    this.selectedProduct = product ? product : this.selectedProduct;
-    if (this.selectedProduct) {
-      this.cartService.addToCart(this.selectedProduct.id, this.productQuantity, this.selectedProduct.price, this.selectedProduct.src, this.selectedProduct.title).subscribe({
+    this.cartService
+      .updateProductQuantity(product.id, quantity, action, product.price)
+      .subscribe({
         next: () => {
           this.loadCart();
         },
         error: (err) => console.error(err),
       });
+  }
+  addToCart(product?: Product) {
+    this.selectedProduct = product ? product : this.selectedProduct;
+    if (this.selectedProduct) {
+      this.cartService
+        .addToCart(
+          this.selectedProduct.id,
+          this.productQuantity,
+          this.selectedProduct.price,
+          this.selectedProduct.src,
+          this.selectedProduct.title,
+        )
+        .subscribe({
+          next: () => {
+            this.loadCart();
+          },
+          error: (err) => console.error(err),
+        });
     }
   }
   getQuantity(product: Product): string {
-    const productIncart = this.cartProducts.find(item => item.productId === product.id);
+    const productIncart = this.cartProducts.find(
+      (item) => item.productId === product.id,
+    );
     return productIncart.quantity.toString();
-
   }
   isInCart(product: Product): boolean {
-    const productIncart = this.cartProducts.find(item => item.productId === product.id);
+    const productIncart = this.cartProducts.find(
+      (item) => item.productId === product.id,
+    );
     if (productIncart) return true;
     return false;
-
   }
   goToCart() {
     this.router.navigateByUrl('/cart');
@@ -234,4 +258,3 @@ export class CatalogComponent implements OnInit {
     this.filterProducts();
   }
 }
-

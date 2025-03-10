@@ -4,9 +4,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 @Component({
   selector: 'shared-slide',
   standalone: true,
-  imports: [
-    CommonModule,
-  ],
+  imports: [CommonModule],
   templateUrl: './slide.component.html',
   styleUrl: './slide.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -27,6 +25,9 @@ export class SlideComponent {
     }
   }
   get visibleSlide() {
-    return this.slide.slice(this.currentIndex, this.currentIndex + this.itemsToShow);
+    return this.slide.slice(
+      this.currentIndex,
+      this.currentIndex + this.itemsToShow,
+    );
   }
 }
