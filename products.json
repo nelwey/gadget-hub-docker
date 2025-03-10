@@ -1,0 +1,722 @@
+[
+  {
+    "id": 1,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image6.png",
+    "price": 102099,
+    "title": "Смартфон 256 ГБ розовый",
+    "rating": "5",
+    "category": "Smartphones",
+    "stock": 50,
+    "inStock": true,
+    "color":"pink"
+  },
+  {
+    "id": 2,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Новинка",
+    "src": "/assets/images/image4.png",
+    "price": 27990,
+    "title": "Умный робот-друг",
+    "rating": "",
+    "category": "ElectricTransport",
+    "stock": 50,
+    "inStock": true,
+    "color":"white"
+  },
+  {
+    "id": 3,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Новинка",
+    "src": "/assets/images/image5.png",
+    "price": 2000,
+    "title": "Часы с GPS трекером, розовый",
+    "rating": "4,8",
+    "category": "SmartWatches",
+    "stock": 50,
+    "inStock": true,
+    "color":"pink"
+  },
+  {
+    "id": 4,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Новинка",
+    "src": "/assets/images/image3.png",
+    "price": 15199,
+    "title": "Смарт-часы, черные",
+    "rating": "4",
+    "category": "SmartWatches",
+    "stock": 50,
+    "inStock": true,
+    "color":"black"
+  },
+  {
+    "id": 5,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Новинка",
+    "src": "/assets/images/image7.png",
+    "price": 43999,
+    "title": "Смартфон 256GB фиолетовый",
+    "rating": "5",
+    "category": "Smartphones",
+    "stock": 50,
+    "inStock": true,
+    "color":"purple"
+  },
+  {
+    "id": 6,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image9.png",
+    "price": 4990,
+    "title": "Беспроводная акустика, голубой",
+    "rating": "4,8",
+    "category": "ElectricTransport",
+    "stock": 50,
+    "inStock": true,
+    "color":"lightblue"
+  },
+  {
+    "id": 7,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image2.png",
+    "price": 10590,
+    "title": "Аппаратный ключ аутентификации...",
+    "rating": "5",
+    "category": "Other",
+    "stock": 50,
+    "inStock": true,
+    "color":"blue"
+  },
+  {
+    "id": 8,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image1.png",
+    "price": 49990,
+    "title": "Шлем виртуальной реальности 128...",
+    "rating": "4,8",
+    "category": "VirtualRealityGlasses",
+    "stock": 50,
+    "inStock": true,
+    "color":"white"
+  },
+  {
+    "id": 9,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image8.png",
+    "price": 2299,
+    "title": "Фитнес-браслет, розовый",
+    "rating": "",
+    "category": "SmartWatches",
+    "stock": 50,
+    "inStock": true,
+    "color":"pink"
+  },
+  {
+    "id": 10,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image10.png",
+    "price": 4990,
+    "title": "Беспроводная акустика, бежевый",
+    "rating": "4",
+    "category": "PortableAcoustics",
+    "stock": 50,
+    "inStock": true,
+    "color":"white"
+  },
+  {
+    "id": 11,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image11.png",
+    "price": 4990,
+    "title": "Внешний аккумулятор 10000mAh, белый",
+    "rating": "",
+    "category": "ExternalBattery",
+    "stock": 50,
+    "inStock": true,
+    "color":"white"
+  },
+  {
+    "id": 12,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image12.png",
+    "price": 4990,
+    "title": "Внешний аккумулятор 10000mAh, черный",
+    "rating": "5",
+    "category": "ExternalBattery",
+    "stock": 50,
+    "inStock": true,
+    "color":"black"
+  },
+  {
+    "id": 13,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image13.png",
+    "price": 4990,
+    "title": "Bluetooth гарнитура, черный",
+    "rating": "",
+    "category": "Headphones",
+    "stock": 50,
+    "inStock": true,
+    "color":"black"
+  },
+  {
+    "id": 14,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image14.png",
+    "price": 4990,
+    "title": "Bluetooth гарнитура, серый",
+    "rating": "5",
+    "category": "Headphones",
+    "stock": 50,
+    "inStock": true,
+    "color":"white"
+  },
+  {
+    "id": 15,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image15.png",
+    "price": 4990,
+    "title": "Беспроводная акустика",
+    "rating": "",
+    "category": "PortableAcoustics",
+    "stock": 50,
+    "inStock": true,
+    "color":"black"
+  },
+  {
+    "id": 16,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image16.png",
+    "price": 4990,
+    "title": "Смартфон 256 ГБ фиолетовый",
+    "rating": "4",
+    "category": "Smartphones",
+    "stock": 50,
+    "inStock": true,
+    "color":"purple"
+  },
+  {
+    "id": 17,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image17.png",
+    "price": 4990,
+    "title": "Смартфон 256 ГБ черный",
+    "rating": "3",
+    "category": "Smartphones",
+    "stock": 50,
+    "inStock": true,
+    "color":"black"
+  },
+  {
+    "id": 18,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image18.png",
+    "price": 4990,
+    "title": "Смартфон 256 ГБ белый",
+    "rating": "5",
+    "category": "Smartphones",
+    "stock": 50,
+    "inStock": true,
+    "color":"white"
+  },
+  {
+    "id": 19,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image19.png",
+    "price": 4990,
+    "title": "Часы с GPS трекером черные",
+    "rating": "",
+    "category": "SmartWatches",
+    "stock": 50,
+    "inStock": true,
+    "color":"black"
+  },
+  {
+    "id": 20,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image20.png",
+    "price": 4990,
+    "title": "Часы с GPS трекером синие",
+    "rating": "3",
+    "category": "SmartWatches",
+    "stock": 50,
+    "inStock": true,
+    "color":"blue"
+  },
+  {
+    "id": 21,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image21.png",
+    "price": 4990,
+    "title": "Фитнес-браслет ASK-B19 зеленый",
+    "rating": "",
+    "category": "SmartWatches",
+    "stock": 50,
+    "inStock": true,
+    "color":"green"
+  },
+  {
+    "id": 22,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image22.png",
+    "price": 4990,
+    "title": "Фитнес-браслет ASK-B19 черный",
+    "rating": "5",
+    "category": "SmartWatches",
+    "stock": 50,
+    "inStock": true,
+    "color":"black"
+  },
+  {
+    "id": 23,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image23.png",
+    "price": 4990,
+    "title": "Наушники белые",
+    "rating": "",
+    "category": "Headphones",
+    "stock": 50,
+    "inStock": true,
+    "color":"white"
+  },
+  {
+    "id": 24,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image24.png",
+    "price": 4990,
+    "title": "Наушники синие",
+    "rating": "5",
+    "category": "Headphones",
+    "stock": 50,
+    "inStock": true,
+    "color":"lightblue"
+  },
+  {
+    "id": 25,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image25.png",
+    "price": 4990,
+    "title": "Наушники черные",
+    "rating": "4",
+    "category": "Headphones",
+    "stock": 50,
+    "inStock": true,
+    "color":"black"
+  },
+  {
+    "id": 26,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image26.png",
+    "price": 4990,
+    "title": "Видеокамера для блогера",
+    "rating": "3",
+    "category": "Other",
+    "stock": 50,
+    "inStock": true,
+    "color":"black"
+  },
+  {
+    "id": 27,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image27.png",
+    "price": 4990,
+    "title": "Микрофон с разъемом Type-C",
+    "rating": "4",
+    "category": "Other",
+    "stock": 50,
+    "inStock": true,
+    "color":"black"
+  },
+  {
+    "id": 28,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image28.png",
+    "price": 4990,
+    "title": "Чехол-подвеска силиконовый с карабином, красный",
+    "rating": "3",
+    "category": "FitnessBracelets",
+    "stock": 50,
+    "inStock": true,
+    "color":"red"
+  },
+  {
+    "id": 29,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image29.png",
+    "price": 4990,
+    "title": "Чехол-подвеска силиконовый с карабином, белый",
+    "rating": "",
+    "category": "FitnessBracelets",
+    "stock": 50,
+    "inStock": true,
+    "color":"white"
+  },
+  {
+    "id": 30,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image30.png",
+    "price": 4990,
+    "title": "Чехол-подвеска силиконовый с карабином, серый",
+    "rating": "4",
+    "category": "FitnessBracelets",
+    "stock": 50,
+    "inStock": true,
+    "color":"black"
+  },
+  {
+    "id": 31,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image31.png",
+    "price": 4990,
+    "title": "Чехол-подвеска силиконовый с карабином, желтый",
+    "rating": "",
+    "category": "FitnessBracelets",
+    "stock": 50,
+    "inStock": true,
+    "color":"yellow"
+  },
+  {
+    "id": 32,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image32.png",
+    "price": 4990,
+    "title": "Беспроводная акустика, серый",
+    "rating": "5",
+    "category": "PortableAcoustics",
+    "stock": 50,
+    "inStock": true,
+    "color":"black"
+  },
+  {
+    "id": 33,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image33.png",
+    "price": 4990,
+    "title": "Беспроводная акустика, голубой",
+    "rating": "2",
+    "category": "Other",
+    "stock": 50,
+    "inStock": true,
+    "color":"white"
+  },
+  {
+    "id": 34,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image34.png",
+    "price": 4990,
+    "title": "Аппаратный ключ аутентификации NFC",
+    "rating": "3",
+    "category": "Other",
+    "stock": 50,
+    "inStock": true,
+    "color":"black"
+  },
+  {
+    "id": 35,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image35.png",
+    "price": 4990,
+    "title": "Аппаратный криптокошелек",
+    "rating": "",
+    "category": "Other",
+    "stock": 50,
+    "inStock": true,
+    "color":"black"
+  },
+  {
+    "id": 36,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image36.png",
+    "price": 4990,
+    "title": "Очки виртуальной реальности, смартфоны до 6,5",
+    "rating": "4",
+    "category": "VirtualRealityGlasses",
+    "stock": 50,
+    "inStock": true,
+    "color":"white"
+  },
+  {
+    "id": 37,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image37.png",
+    "price": 4990,
+    "title": "Шлем виртуальной реальности 128GB",
+    "rating": "4",
+    "category": "VirtualRealityGlasses",
+    "stock": 50,
+    "inStock": true,
+    "color":"white"
+  },
+  {
+    "id": 38,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image38.png",
+    "price": 4990,
+    "title": "Умный чемодан-скутер серый",
+    "rating": "",
+    "category": "Other",
+    "stock": 50,
+    "inStock": true,
+    "color":"white"
+  },
+  {
+    "id": 39,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image39.png",
+    "price": 4990,
+    "title": "Умный чемодан-скутер черный",
+    "rating": "3",
+    "category": "Other",
+    "stock": 50,
+    "inStock": true,
+    "color":"black"
+  },
+  {
+    "id": 40,
+    "description": "Смартфон фиолетовый — девайс со складным корпусом и двумя 'Экран'ами, что расширяет его возможности. ",
+    "characteristics": {
+      "Гарантия": "1 год",
+      "Экран": "3.4'/720x748 Пикс",
+      "Процессор": "'Процессор'Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц"
+    },
+    "status": "Хит",
+    "src": "/assets/images/image40.png",
+    "price": 4990,
+    "title": "Дыхательный тренажер",
+    "rating": "4",
+    "category": "Other",
+    "stock": 50,
+    "inStock": true,
+    "color":"pink"
+  }
+]
