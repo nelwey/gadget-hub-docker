@@ -1,4 +1,3 @@
-// @ts-check
 const eslint = require("@eslint/js");
 const tseslint = require("typescript-eslint");
 const angular = require("angular-eslint");
@@ -13,21 +12,17 @@ module.exports = tseslint.config(
       ...tseslint.configs.recommended,
       ...tseslint.configs.stylistic,
       ...angular.configs.tsRecommended,
-      prettierConfig, // Add Prettier config to disable conflicting rules
+      prettierConfig,
     ],
     plugins: {
-      prettier: prettierPlugin, // Register Prettier plugin
+      prettier: prettierPlugin,
     },
     processor: angular.processInlineTemplates,
     rules: {
       "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-unused-vars": "warn",
-      "@angular-eslint/directive-selector": [
-        "error",
-        { type: "attribute", prefix: "app", style: "camelCase" },
-      ],
-      "@angular-eslint/no-empty-lifecycle-method": "warn",
-      "prettier/prettier": ["error", { singleQuote: true, semi: true }], // Apply Prettier rules
+      "@typescript-eslint/explicit-function-return-type": "error",
+      "@angular-eslint/no-empty-lifecycle-method": "error",
+      "prettier/prettier": ["error", { singleQuote: true, semi: true }],
     },
   },
   {
@@ -41,9 +36,8 @@ module.exports = tseslint.config(
       prettier: prettierPlugin,
     },
     rules: {
-      "@angular-eslint/template/click-events-have-key-events": "off",
-      "@angular-eslint/template/interactive-supports-focus": "off",
-      "@angular-eslint/template/no-negated-async": "warn",
+      "@angular-eslint/template/interactive-supports-focus": "error",
+      "@angular-eslint/template/eqeqeq": "error",
       // "prettier/prettier": ["error", { singleQuote: true }],
     },
   },

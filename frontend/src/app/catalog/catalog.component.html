@@ -10,23 +10,17 @@
     </button>
   </div>
   <div class="content-center">
-    <button
-      class="text-[#115efb] text-base font-rubik font-normal border-b-2 border-dashed border-[#115EFB]"
-    >
+    <button class="text-[#115efb] text-base font-rubik font-normal border-b-2 border-dashed border-[#115EFB]">
       Популярные
     </button>
   </div>
   <div class="content-center">
-    <button
-      class="text-[#115efb] text-base font-rubik font-normal border-b-2 border-dashed border-[#115EFB]"
-    >
+    <button class="text-[#115efb] text-base font-rubik font-normal border-b-2 border-dashed border-[#115EFB]">
       Подешевле
     </button>
   </div>
   <div class="content-center">
-    <button
-      class="text-[#115efb] text-base font-rubik font-normal border-b-2 border-dashed border-[#115EFB]"
-    >
+    <button class="text-[#115efb] text-base font-rubik font-normal border-b-2 border-dashed border-[#115EFB]">
       Подороже
     </button>
   </div>
@@ -39,36 +33,30 @@
     <div class="grid grid-cols-3 gap-5">
       <!-- product -->
       <!-- white-bg -->
-      <div
-        *ngFor="let product of paginatedProducts"
-        class="p-3 transition ease-in-out delay-100 cursor-pointer hover:bg-white hover:shadow-md hover:-translate-y-1 hover:scale-105 hover:rounded-[28px] hover:text-[#115efb] overflow-hidden transform-gpu relative z-10"
-      >
+      <div *ngFor="let product of paginatedProducts"
+        class="p-3 transition ease-in-out delay-100 cursor-pointer hover:bg-white hover:shadow-md hover:-translate-y-1 hover:scale-105 hover:rounded-[28px] hover:text-[#115efb] overflow-hidden transform-gpu relative z-10">
         <!-- product-content -->
         <div class="flex flex-col h-full">
           <!-- product-bg -->
-          <div
-            class="flex flex-col bg-[#eceff3] rounded-[20px] border-none content-center h-60"
-          >
+          <div class="flex flex-col bg-[#eceff3] rounded-[20px] border-none content-center h-60">
             <!-- tag -->
             <div class="text-end p-2">
-              <span
-                *ngIf="product.status !== ''"
-                class="text-white text-xs font-medium font-rubik p-2 rounded-full"
+              <span *ngIf="product.status !== ''" class="text-white text-xs font-medium font-rubik p-2 rounded-full"
                 [ngClass]="
                   product.status === 'Хит' ? 'bg-[#ff60c3]' : 'bg-[#00e398]'
-                "
-              >
+                ">
                 {{ product.status }}
               </span>
             </div>
             <!-- img -->
-            <img
-              (click)="openModal(product)"
-              class="mx-auto object-contain h-40"
-              [src]="product.src"
-              alt="product_image"
-            />
+            <div class="mx-auto">
+              <button (click)="openModal(product)" class="object-contain h-40 p-0 border-none bg-transparent"
+                aria-label="View product details">
+                <img [src]="product.src" alt="Product image" class="h-40" />
+              </button>
+            </div>
           </div>
+
           <!-- product-info -->
           <div class="mb-2 flex-grow">
             <p class="text-black text-xl font-medium font-rubik">
@@ -88,60 +76,35 @@
             </div>
           </div>
 
-          <div
-            *ngIf="isInCart(product)"
-            class="flex justify-between items-center"
-          >
-            <button
-              (click)="goToCart()"
-              class="py-2 px-4 bg-[#FF60C3] rounded-lg justify-center items-center gap-3 inline-flex hover:bg-[#cd3c96] hover:border-blue-500 border"
-            >
-              <img
-                src="/assets/icons/cart.svg"
-                class="w-4 h-4 relative"
-                alt="cart"
-              />
-              <p
-                class="text-white text-sm font-medium font-rubik leading-normal"
-              >
+          <div *ngIf="isInCart(product)" class="flex justify-between items-center">
+            <button (click)="goToCart()"
+              class="py-2 px-4 bg-[#FF60C3] rounded-lg justify-center items-center gap-3 inline-flex hover:bg-[#cd3c96] hover:border-blue-500 border">
+              <img src="/assets/icons/cart.svg" class="w-4 h-4 relative" alt="cart" />
+              <p class="text-white text-sm font-medium font-rubik leading-normal">
                 1 шт.
               </p>
             </button>
 
-            <button
-              (click)="decreaseQuantity(product)"
-              class="text-[#115efb] size-6 bg-[#e4e7eb] rounded hover:bg-[#115efb] hover:text-white font-medium"
-            >
+            <button (click)="decreaseQuantity(product)"
+              class="text-[#115efb] size-6 bg-[#e4e7eb] rounded hover:bg-[#115efb] hover:text-white font-medium">
               -
             </button>
 
-            <p
-              class="text-black text-base font-normal font-inter leading-[30px]"
-            >
+            <p class="text-black text-base font-normal font-inter leading-[30px]">
               {{ getQuantity(product) }}
             </p>
 
-            <button
-              (click)="increaseQuantity(product)"
-              class="text-[#115efb] size-6 bg-[#e4e7eb] rounded hover:bg-[#115efb] hover:text-white"
-            >
+            <button (click)="increaseQuantity(product)"
+              class="text-[#115efb] size-6 bg-[#e4e7eb] rounded hover:bg-[#115efb] hover:text-white">
               <span>+</span>
             </button>
           </div>
 
           <div *ngIf="!isInCart(product)" class="mt-auto">
-            <button
-              (click)="addToCart(product)"
-              class="w-2/3 py-2 bg-[#115efb] rounded-lg justify-center items-center gap-3 inline-flex hover:bg-[#0b3589] hover:border-blue-500 border"
-            >
-              <img
-                src="/assets/icons/cart.svg"
-                class="w-4 h-4 relative"
-                alt="cart"
-              />
-              <p
-                class="text-white text-sm font-medium font-rubik leading-normal"
-              >
+            <button (click)="addToCart(product)"
+              class="w-2/3 py-2 bg-[#115efb] rounded-lg justify-center items-center gap-3 inline-flex hover:bg-[#0b3589] hover:border-blue-500 border">
+              <img src="/assets/icons/cart.svg" class="w-4 h-4 relative" alt="cart" />
+              <p class="text-white text-sm font-medium font-rubik leading-normal">
                 В корзину
               </p>
             </button>
@@ -153,34 +116,18 @@
     <div class="flex justify-center">
       <ol class="flex justify-center text-xs font-medium space-x-1">
         <button *ngIf="showPrevButton" (click)="prevPage()">
-          <img
-            src="./assets/icons/left-arrow.svg"
-            alt="left_arrow"
-            class="size-4"
-          />
+          <img src="./assets/icons/left-arrow.svg" alt="left_arrow" class="size-4" />
         </button>
 
         <li *ngFor="let page of [1, 2, 3, 4]">
-          <a
-            href="javascript:void(0);"
-            (click)="goToPage(page)"
-            [class.bg-[#115EFB]]="page === currentPage"
-            [class.text-white]="page === currentPage"
-            class="block w-8 h-8 text-center border rounded-full leading-8"
-          >
+          <a href="javascript:void(0);" (click)="goToPage(page)" [class.bg-[#115EFB]]="page === currentPage"
+            [class.text-white]="page === currentPage" class="block w-8 h-8 text-center border rounded-full leading-8">
             {{ page }}
           </a>
         </li>
 
-        <button
-          (click)="nextPage()"
-          [disabled]="currentPage * itemsPerPage >= products.length"
-        >
-          <img
-            src="./assets/icons/right-arrow.svg"
-            alt="right_arrow"
-            class="size-4"
-          />
+        <button (click)="nextPage()" [disabled]="currentPage * itemsPerPage >= products.length">
+          <img src="./assets/icons/right-arrow.svg" alt="right_arrow" class="size-4" />
         </button>
       </ol>
     </div>
@@ -196,38 +143,25 @@
     <div class="flex flex-col">
       <div class="flex gap-2 mb-4">
         <div class="flex flex-col">
-          <label
-            >От
-            <input
-              type="text"
+          <label>От
+            <input type="text"
               class="h-10 px-2 py-2 w-24 text-[#b9b9b9] text-base font-rubik placeholder:text-[#b9b9b9] bg-[#e4e7eb] rounded-lg justify-start items-center"
-              [(ngModel)]="minHandleValue"
-              (input)="onInputChange()"
-            />
+              [(ngModel)]="minHandleValue" (input)="onInputChange()" />
           </label>
         </div>
 
         <div class="flex flex-col">
-          <label
-            >До
-            <input
-              type="text"
+          <label>До
+            <input type="text"
               class="h-10 px-2 py-2 w-24 text-[#b9b9b9] text-base font-rubik placeholder:text-[#b9b9b9] bg-[#e4e7eb] rounded-lg justify-start items-center"
-              [(ngModel)]="maxHandleValue"
-              (input)="onInputChange()"
-            />
+              [(ngModel)]="maxHandleValue" (input)="onInputChange()" />
           </label>
         </div>
       </div>
 
       <!-- slider -->
-      <ngx-slider
-        [(value)]="minHandleValue"
-        [(highValue)]="maxHandleValue"
-        [options]="sliderOptions"
-        (valueChange)="onInputChange()"
-        (highValueChange)="onInputChange()"
-      ></ngx-slider>
+      <ngx-slider [(value)]="minHandleValue" [(highValue)]="maxHandleValue" [options]="sliderOptions"
+        (valueChange)="onInputChange()" (highValueChange)="onInputChange()"></ngx-slider>
     </div>
 
     <!-- Тип товара -->
@@ -239,11 +173,8 @@
     <!-- product-types -->
     <div class="flex flex-col">
       <label *ngFor="let item of typeFilters">
-        <input
-          type="checkbox"
-          class="h-4 w-4 invert checked:invert-0 opacity-10 checked:opacity-100 mr-1"
-          (change)="toggleTypeSelection(item.value)"
-        />{{ item.type }}
+        <input type="checkbox" class="h-4 w-4 invert checked:invert-0 opacity-10 checked:opacity-100 mr-1"
+          (change)="toggleTypeSelection(item.value)" />{{ item.type }}
       </label>
     </div>
     <!-- Цвет -->
@@ -252,29 +183,21 @@
     </div>
     <div class="flex flex-col">
       <label *ngFor="let item of colorFilters">
-        <input
-          type="checkbox"
-          class="h-4 w-4 invert checked:invert-0 opacity-10 checked:opacity-100 mr-1"
-          (change)="toggleColorSelection(item.value)"
-        />{{ item.color }}
+        <input type="checkbox" class="h-4 w-4 invert checked:invert-0 opacity-10 checked:opacity-100 mr-1"
+          (change)="toggleColorSelection(item.value)" />{{ item.color }}
       </label>
     </div>
     <!-- buttons -->
     <div class="flex">
       <button
-        class="h-12 w-1/2 bg-[#115efb] rounded-lg justify-center items-center gap-3 inline-flex hover:bg-[#0b3589] focus:border-[#84adff]"
-      >
+        class="h-12 w-1/2 bg-[#115efb] rounded-lg justify-center items-center gap-3 inline-flex hover:bg-[#0b3589] focus:border-[#84adff]">
         <div class="text-white text-base font-medium font-rubik leading-normal">
           Показать
         </div>
       </button>
-      <button
-        (click)="resetFilters()"
-        class="h-12 w-1/2 bg-white rounded-lg justify-center items-center gap-3 inline-flex"
-      >
-        <div
-          class="text-[#ff60c3] text-base font-medium font-rubik leading-normal"
-        >
+      <button (click)="resetFilters()"
+        class="h-12 w-1/2 bg-white rounded-lg justify-center items-center gap-3 inline-flex">
+        <div class="text-[#ff60c3] text-base font-medium font-rubik leading-normal">
           Сбросить
         </div>
       </button>
@@ -284,17 +207,9 @@
 <shared-footer></shared-footer>
 
 <!-- Modal -->
-<div
-  *ngIf="showModal"
-  class="fixed inset-0 flex items-center justify-center z-50 bg-gray-900 bg-opacity-50"
->
-  <div
-    class="bg-white w-[850px] h-[520px] p-14 rounded-[40px] shadow-lg relative"
-  >
-    <button
-      (click)="closeModal()"
-      class="absolute top-6 right-6 text-gray-500 hover:text-gray-700"
-    >
+<div *ngIf="showModal" class="fixed inset-0 flex items-center justify-center z-50 bg-gray-900 bg-opacity-50">
+  <div class="bg-white w-[850px] h-[520px] p-14 rounded-[40px] shadow-lg relative">
+    <button (click)="closeModal()" class="absolute top-6 right-6 text-gray-500 hover:text-gray-700">
       <img src="/assets/icons/close_window.svg" alt="close" class="w-3 h-3" />
     </button>
 
@@ -303,17 +218,11 @@
       <div class="flex gap-4">
         <!-- product -->
         <div class="bg-[#e4e7eb] w-2/5 rounded-[20px] content-center h-80 p-5">
-          <img
-            [src]="selectedProduct!.src"
-            alt="product_image"
-            class="object-contain mx-auto h-60"
-          />
+          <img [src]="selectedProduct!.src" alt="product_image" class="object-contain mx-auto h-60" />
         </div>
         <!-- product desc -->
         <div class="flex flex-col gap-3 w-3/5">
-          <p
-            class="text-black text-2xl font-medium font-rubik leading-[41.60px]"
-          >
+          <p class="text-black text-2xl font-medium font-rubik leading-[41.60px]">
             {{ selectedProduct!.title }}
           </p>
           <div *ngIf="selectedProduct!.rating !== ''" class="flex gap-1">
@@ -326,24 +235,18 @@
               </p>
             </div>
           </div>
-          <p
-            class="text-sm text-[#474747] font-normal font-rubik leading-normal"
-          >
+          <p class="text-sm text-[#474747] font-normal font-rubik leading-normal">
             {{ selectedProduct!.description }}
           </p>
           <p class="text-black text-lg font-medium font-rubik">
             Характеристики
           </p>
           <div>
-            <p
-              class="text-sm font-inter text-[#474747]"
-              *ngFor="
+            <p class="text-sm font-inter text-[#474747]" *ngFor="
                 let charasteristic of selectedProduct!.characteristics
                   | keyvalue
-              "
-            >
-              <span class="font-bold">{{ charasteristic.key }}</span
-              >: {{ charasteristic.value }}
+              ">
+              <span class="font-bold">{{ charasteristic.key }}</span>: {{ charasteristic.value }}
             </p>
           </div>
         </div>
@@ -354,60 +257,34 @@
         </p>
 
         <div class="flex justify-end items-center gap-6">
-          <div
-            class="flex gap-6 items-center"
-            *ngIf="isInCart(selectedProduct!)"
-          >
-            <button
-              (click)="decreaseQuantity(selectedProduct!)"
-              class="text-[#115efb] size-6 bg-[#e4e7eb] rounded hover:bg-[#115efb] hover:text-white"
-            >
+          <div class="flex gap-6 items-center" *ngIf="isInCart(selectedProduct!)">
+            <button (click)="decreaseQuantity(selectedProduct!)"
+              class="text-[#115efb] size-6 bg-[#e4e7eb] rounded hover:bg-[#115efb] hover:text-white">
               <span>-</span>
             </button>
 
-            <p
-              class="text-black text-base font-normal font-inter leading-[30px]"
-            >
+            <p class="text-black text-base font-normal font-inter leading-[30px]">
               {{ getQuantity(selectedProduct!) }}
             </p>
 
-            <button
-              (click)="increaseQuantity(selectedProduct!)"
-              class="text-[#115efb] size-6 bg-[#e4e7eb] rounded hover:bg-[#115efb] hover:text-white"
-            >
+            <button (click)="increaseQuantity(selectedProduct!)"
+              class="text-[#115efb] size-6 bg-[#e4e7eb] rounded hover:bg-[#115efb] hover:text-white">
               <span>+</span>
             </button>
 
-            <button
-              (click)="goToCart()"
-              class="h-10 px-5 py-1 bg-[#ff60c3] rounded-lg justify-center items-center gap-3 inline-flex hover:bg-[#cd3c96] hover:border-blue-500 border"
-            >
-              <img
-                src="/assets/icons/cart.svg"
-                class="w-4 h-4 relative"
-                alt="cart"
-              />
-              <p
-                class="text-white text-base font-medium font-rubik leading-normal"
-              >
+            <button (click)="goToCart()"
+              class="h-10 px-5 py-1 bg-[#ff60c3] rounded-lg justify-center items-center gap-3 inline-flex hover:bg-[#cd3c96] hover:border-blue-500 border">
+              <img src="/assets/icons/cart.svg" class="w-4 h-4 relative" alt="cart" />
+              <p class="text-white text-base font-medium font-rubik leading-normal">
                 В корзине 1 шт.
               </p>
             </button>
           </div>
 
-          <button
-            (click)="addToCart()"
-            *ngIf="!isInCart(selectedProduct!)"
-            class="h-10 px-5 py-1 bg-[#115efb] rounded-lg justify-center items-center gap-3 inline-flex hover:bg-[#0b3589] hover:border-blue-500 border"
-          >
-            <img
-              src="/assets/icons/cart.svg"
-              class="w-4 h-4 relative"
-              alt="cart"
-            />
-            <p
-              class="text-white text-base font-medium font-rubik leading-normal"
-            >
+          <button (click)="addToCart()" *ngIf="!isInCart(selectedProduct!)"
+            class="h-10 px-5 py-1 bg-[#115efb] rounded-lg justify-center items-center gap-3 inline-flex hover:bg-[#0b3589] hover:border-blue-500 border">
+            <img src="/assets/icons/cart.svg" class="w-4 h-4 relative" alt="cart" />
+            <p class="text-white text-base font-medium font-rubik leading-normal">
               В корзину
             </p>
           </button>

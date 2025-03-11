@@ -52,7 +52,7 @@ export class CartComponent implements OnInit {
 
   public orderNumber = '';
 
-  toggleSelectAll() {
+  toggleSelectAll(): void {
     this.cartItems.forEach(
       (product) => (product.selected = this.selectAllChecked),
     );
@@ -63,29 +63,29 @@ export class CartComponent implements OnInit {
     this.selectedPaymentMethod = target.value;
   }
 
-  openOrderModal() {
+  openOrderModal(): void {
     this.showOrderModal = true;
   }
 
-  closeOrderModal() {
+  closeOrderModal(): void {
     this.showOrderModal = false;
   }
-  openModal(product: any) {
+  openModal(product: any): void {
     this.selectedProduct = product;
     if (this.selectedProduct) {
       this.selectedProduct.id = product.productId;
     }
   }
 
-  closeModal() {
+  closeModal(): void {
     this.selectedProduct = null;
   }
 
-  selectTab(tab: string) {
+  selectTab(tab: string): void {
     this.selectedTab = tab;
   }
 
-  loadCart() {
+  loadCart(): void {
     this.cartService.getCart().subscribe({
       next: (items) => {
         this.cartItems = items.map((item) => ({ ...item, selected: false }));
@@ -93,7 +93,7 @@ export class CartComponent implements OnInit {
       error: (err) => console.error(err),
     });
   }
-  loadOrders() {
+  loadOrders(): void {
     this.orderService.getOrders().subscribe({
       next: (orders) => {
         this.orders = orders;
@@ -101,7 +101,7 @@ export class CartComponent implements OnInit {
       error: (err) => console.error(err),
     });
   }
-  get total() {
+  get total(): number {
     let total = 0;
     this.cartItems.forEach((product) => {
       total += product.subtotal;
@@ -109,7 +109,7 @@ export class CartComponent implements OnInit {
     return total;
   }
 
-  removeItem() {
+  removeItem(): void {
     if (this.selectedProduct) {
       this.cartService.removeFromCart(this.selectedProduct.id).subscribe({
         next: () => {
@@ -120,7 +120,7 @@ export class CartComponent implements OnInit {
       });
     }
   }
-  removeAllSelectedItems() {
+  removeAllSelectedItems(): void {
     const selectedProducts = this.cartItems.filter(
       (product) => product.selected,
     );
@@ -139,7 +139,7 @@ export class CartComponent implements OnInit {
       this.cartItems = [];
     }
   }
-  removeAllItems() {
+  removeAllItems(): void {
     this.cartItems.forEach((item) => {
       this.cartService.removeFromCart(item.productId).subscribe({
         next: () => {
@@ -150,13 +150,13 @@ export class CartComponent implements OnInit {
     });
   }
 
-  increaseQuantity(product: any) {
+  increaseQuantity(product: any): void {
     if (product && this.isInCart(product)) {
       this.updateCartQuantity(product, 1, 'increase');
     }
   }
 
-  decreaseQuantity(product: any) {
+  decreaseQuantity(product: any): void {
     if (product && this.isInCart(product)) {
       this.updateCartQuantity(product, 1, 'decrease');
     }
@@ -164,7 +164,7 @@ export class CartComponent implements OnInit {
   isInCart(product: any): boolean {
     return this.cartService.isProductInCart(product.productId);
   }
-  updateCartQuantity(product: any, quantity: number, action: string) {
+  updateCartQuantity(product: any, quantity: number, action: string): void {
     this.cartService
       .updateProductQuantity(product.productId, quantity, action, product.price)
       .subscribe({
@@ -174,13 +174,13 @@ export class CartComponent implements OnInit {
         error: (err) => console.error(err),
       });
   }
-  public goToHome() {
+  public goToHome(): void {
     this.router.navigateByUrl('/home');
   }
-  public goToCatalog() {
+  public goToCatalog(): void {
     this.router.navigateByUrl('/catalog');
   }
-  addOrder() {
+  addOrder(): void {
     const today = new Date();
     const date = today.toISOString().split('T')[0];
     this.orderNumber =

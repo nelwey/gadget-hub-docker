@@ -184,27 +184,27 @@ export class CatalogComponent implements OnInit {
     this.filterProducts();
   }
 
-  openModal(product: any) {
+  openModal(product: any): void {
     this.showModal = true;
     this.selectedProduct = product;
   }
 
-  closeModal() {
+  closeModal(): void {
     this.showModal = false;
     this.selectedProduct = null;
   }
-  increaseQuantity(product: Product) {
+  increaseQuantity(product: Product): void {
     if (product && this.isInCart(product)) {
       this.updateCartQuantity(product, 1, 'increase');
     }
   }
 
-  decreaseQuantity(product: Product) {
+  decreaseQuantity(product: Product): void {
     if (product && this.isInCart(product)) {
       this.updateCartQuantity(product, 1, 'decrease');
     }
   }
-  updateCartQuantity(product: Product, quantity: number, action: string) {
+  updateCartQuantity(product: Product, quantity: number, action: string): void {
     this.cartService
       .updateProductQuantity(product.id, quantity, action, product.price)
       .subscribe({
@@ -214,7 +214,7 @@ export class CatalogComponent implements OnInit {
         error: (err) => console.error(err),
       });
   }
-  addToCart(product?: Product) {
+  addToCart(product?: Product): void {
     this.selectedProduct = product ? product : this.selectedProduct;
     if (this.selectedProduct) {
       this.cartService
@@ -246,7 +246,7 @@ export class CatalogComponent implements OnInit {
     if (productIncart) return true;
     return false;
   }
-  goToCart() {
+  goToCart(): void {
     this.router.navigateByUrl('/cart');
   }
   resetFilters(): void {

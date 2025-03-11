@@ -13,7 +13,7 @@ import { SlideComponent } from '../shared/components/slide/slide.component';
 })
 export class HomeComponent {
   public email = 'gadget@hub.ru';
-  public hitItems: any[] = [
+  public hitItems: object[] = [
     {
       status: 'Хит',
       src: '/assets/images/image1.png',
@@ -57,7 +57,7 @@ export class HomeComponent {
       rating: '5',
     },
   ];
-  public newItems: any[] = [
+  public newItems: object[] = [
     {
       status: 'Новинка',
       src: '/assets/images/image5.png',

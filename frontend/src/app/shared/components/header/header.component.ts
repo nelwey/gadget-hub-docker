@@ -25,16 +25,16 @@ export class HeaderComponent implements OnInit {
       this.currentRoute = this.router.url;
     });
   }
-  public goToLogin() {
+  public goToLogin(): void {
     this.router.navigateByUrl('/login');
   }
-  public goToHome() {
+  public goToHome(): void {
     this.router.navigateByUrl('/home');
   }
-  public goToCatalog() {
+  public goToCatalog(): void {
     this.router.navigateByUrl('/catalog');
   }
-  public goToCart() {
+  public goToCart(): void {
     this.router.navigateByUrl('/cart');
   }
 

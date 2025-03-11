@@ -11,20 +11,19 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class SlideComponent {
   @Input() slide: any[] = [];
-
   currentIndex = 0;
   itemsToShow = 3;
 
-  previous() {
+  previous(): void {
     this.currentIndex = Math.max(this.currentIndex - 1, 0);
   }
-  next() {
+  next(): void {
     if (this.currentIndex === 3) return;
     if (this.currentIndex + 1 < this.slide.length) {
       this.currentIndex += 1;
     }
   }
-  get visibleSlide() {
+  get visibleSlide(): any[] {
     return this.slide.slice(
       this.currentIndex,
       this.currentIndex + this.itemsToShow,
