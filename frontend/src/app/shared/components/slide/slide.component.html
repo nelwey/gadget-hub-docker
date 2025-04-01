@@ -1,12 +1,12 @@
 <div class="flex gap-3">
   <button
-  id="previous"
-  class="text-5xl flex justify-center items-center cursor-pointer relative -top-8"
-  (click)="previous()"
-  aria-label="Previous"
->
-  <img src="/assets/icons/left-arrow.svg" alt="Previous" />
-</button>
+    id="previous"
+    class="text-5xl flex justify-center items-center cursor-pointer relative -top-8"
+    (click)="previous()"
+    aria-label="Previous"
+  >
+    <img src="/assets/icons/left-arrow.svg" alt="Previous" />
+  </button>
   <div *ngFor="let image of visibleSlide">
     <div class="bg-[#eceff3] flex flex-col rounded-lg border-none w-56 h-60">
       <div class="text-end p-2">
@@ -18,17 +18,11 @@
         </span>
       </div>
       <div>
-        <img
-          class="mx-auto object-contain w-40 h-40"
-          [src]="image.src"
-          alt="visibleSlide"
-        />
+        <img class="mx-auto object-contain w-40 h-40" [src]="image.src" alt="visibleSlide" />
       </div>
     </div>
     <div>
-      <p class="text-xl text-black font-medium font-rubik">
-        {{ image.price }} ₽
-      </p>
+      <p class="text-xl text-black font-medium font-rubik">{{ image.price }} ₽</p>
       <p class="text-[#474747] text-sm font-rubik">{{ image.description }}</p>
     </div>
     <div class="flex gap-2" *ngIf="image.rating !== ''">
@@ -41,6 +35,6 @@
     class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-8"
     (click)="next()"
   >
-    <img src="/assets/icons/right-arrow.svg" alt="right-arrow" aria-label="Next"/>
+    <img src="/assets/icons/right-arrow.svg" alt="right-arrow" aria-label="Next" />
   </button>
 </div>

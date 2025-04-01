@@ -10,23 +10,20 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SlideComponent {
-  @Input() slide: any[] = [];
-  currentIndex = 0;
-  itemsToShow = 3;
+  @Input() public slide: any[] = [];
+  public currentIndex = 0;
+  public itemsToShow = 3;
 
-  previous(): void {
+  public previous(): void {
     this.currentIndex = Math.max(this.currentIndex - 1, 0);
   }
-  next(): void {
+  public next(): void {
     if (this.currentIndex === 3) return;
     if (this.currentIndex + 1 < this.slide.length) {
       this.currentIndex += 1;
     }
   }
-  get visibleSlide(): any[] {
-    return this.slide.slice(
-      this.currentIndex,
-      this.currentIndex + this.itemsToShow,
-    );
+  public get visibleSlide(): any[] {
+    return this.slide.slice(this.currentIndex, this.currentIndex + this.itemsToShow);
   }
 }

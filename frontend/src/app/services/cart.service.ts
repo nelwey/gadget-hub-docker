@@ -5,26 +5,26 @@ import { AuthService } from './auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class CartService {
-  constructor(
+  public constructor(
     private http: HttpClient,
-    private authService: AuthService,
+    private authService: AuthService
   ) {}
   private apiUrl = 'http://localhost:8080/api/cart';
   private cart: { productId: number; quantity: number }[] = [];
 
   private cartQuantitySource = new BehaviorSubject<number>(0);
-  currentCartQuantity = this.cartQuantitySource.asObservable();
+  public currentCartQuantity = this.cartQuantitySource.asObservable();
 
-  getCart(): Observable<any[]> {
+  public getCart(): Observable<any[]> {
     const userId = this.authService.getUserId();
     return this.http.get<any[]>(`${this.apiUrl}/${userId}`);
   }
-  addToCart(
+  public addToCart(
     productId: number,
     quantity: number,
     price: number,
     src: string,
-    title: string,
+    title: string
   ): Observable<any> {
     const userId = this.authService.getUserId();
     const newCartItem = { productId, quantity };
@@ -42,22 +42,22 @@ export class CartService {
     });
   }
 
-  removeFromCart(productId: number): Observable<any> {
+  public removeFromCart(productId: number): Observable<any> {
     const userId = this.authService.getUserId();
     this.cart = this.cart.filter((product) => product.productId !== productId);
     this.updateCartQuantityTotal();
     return this.http.delete(`${this.apiUrl}/delete/${userId}/${productId}`);
   }
 
-  isProductInCart(productId: number): boolean {
+  public isProductInCart(productId: number): boolean {
     return this.cart.some((item) => item.productId === productId);
   }
 
-  updateProductQuantity(
+  public updateProductQuantity(
     productId: number,
     quantity: number,
     action: string,
-    price: number,
+    price: number
   ): Observable<any> {
     const product = this.cart.find((p) => p.productId === productId);
     if (action === 'increase') {
@@ -80,15 +80,12 @@ export class CartService {
       price,
     });
   }
-  updateCartQuantityTotal(): void {
+  public updateCartQuantityTotal(): void {
     let updatedQuantity = this.cartQuantitySource.value;
-    updatedQuantity = this.cart.reduce(
-      (total, product) => total + product.quantity,
-      0,
-    );
+    updatedQuantity = this.cart.reduce((total, product) => total + product.quantity, 0);
     this.cartQuantitySource.next(updatedQuantity);
   }
-  loadCart(): void {
+  public loadCart(): void {
     this.getCart().subscribe((cartItems) => {
       this.cart = cartItems.map((item) => ({
         productId: item.id,
@@ -97,7 +94,7 @@ export class CartService {
       this.updateCartQuantityTotal();
     });
   }
-  clearCart(): void {
+  public clearCart(): void {
     this.cart = [];
     this.updateCartQuantityTotal();
   }

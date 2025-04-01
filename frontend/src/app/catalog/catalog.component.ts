@@ -26,10 +26,10 @@ import { NgxSliderModule, Options } from '@angular-slider/ngx-slider';
   templateUrl: './catalog.component.html',
 })
 export class CatalogComponent implements OnInit {
-  constructor(
+  public constructor(
     private cartService: CartService,
     private productService: ProductService,
-    private router: Router,
+    private router: Router
   ) {}
 
   public typeFilters: Filter[] = [
@@ -69,9 +69,9 @@ export class CatalogComponent implements OnInit {
 
   public selectedTypes: string[] = [];
 
-  minHandleValue = 2990;
-  maxHandleValue = 167890;
-  sliderOptions: Options = {
+  public minHandleValue = 2990;
+  public maxHandleValue = 167890;
+  public sliderOptions: Options = {
     floor: 0,
     ceil: 200000,
     step: 10,
@@ -83,27 +83,26 @@ export class CatalogComponent implements OnInit {
     },
   };
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.getProducts();
     this.loadCart();
   }
 
-  getProducts(): void {
+  public getProducts(): void {
     this.productService.getProducts().subscribe({
       next: (products: Product[]) => {
         this.products = products;
         this.filteredProducts = [...products];
         this.updatePaginatedProducts();
       },
-      error: (e) => console.error('Error fetching products:', e),
     });
   }
 
-  filterByType(): void {
+  public filterByType(): void {
     this.filterProducts();
   }
 
-  filterProducts(): void {
+  public filterProducts(): void {
     this.filteredProducts = this.products.filter((product) => {
       const matchesColor =
         !this.selectedColors.length ||
@@ -112,15 +111,14 @@ export class CatalogComponent implements OnInit {
         !this.selectedTypes.length ||
         (product.category && this.selectedTypes.includes(product.category));
       const matchesPrice =
-        product.price >= this.minHandleValue &&
-        product.price <= this.maxHandleValue;
+        product.price >= this.minHandleValue && product.price <= this.maxHandleValue;
       return matchesColor && matchesType && matchesPrice;
     });
     this.currentPage = 1;
     this.updatePaginatedProducts();
   }
 
-  toggleColorSelection(color: string): void {
+  public toggleColorSelection(color: string): void {
     if (this.selectedColors.includes(color)) {
       this.selectedColors = this.selectedColors.filter((c) => c !== color);
     } else {
@@ -129,7 +127,7 @@ export class CatalogComponent implements OnInit {
     this.filterProducts();
   }
 
-  toggleTypeSelection(type: string): void {
+  public toggleTypeSelection(type: string): void {
     if (this.selectedTypes.includes(type)) {
       this.selectedTypes = this.selectedTypes.filter((t) => t !== type);
     } else {
@@ -138,19 +136,19 @@ export class CatalogComponent implements OnInit {
     this.filterProducts();
   }
 
-  updatePaginatedProducts(): void {
+  public updatePaginatedProducts(): void {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
     this.paginatedProducts = this.filteredProducts.slice(startIndex, endIndex);
   }
 
-  goToPage(page: number): void {
+  public goToPage(page: number): void {
     this.currentPage = page;
     this.updatePaginatedProducts();
     this.showPrevButton = this.currentPage > 1;
   }
 
-  nextPage(): void {
+  public nextPage(): void {
     if (this.currentPage * this.itemsPerPage < this.filteredProducts.length) {
       this.currentPage++;
       this.updatePaginatedProducts();
@@ -158,7 +156,7 @@ export class CatalogComponent implements OnInit {
     }
   }
 
-  prevPage(): void {
+  public prevPage(): void {
     if (this.currentPage > 1) {
       this.currentPage--;
       this.updatePaginatedProducts();
@@ -166,7 +164,7 @@ export class CatalogComponent implements OnInit {
     }
   }
 
-  loadCart(): void {
+  public loadCart(): void {
     this.cartService.getCart().subscribe({
       next: (cartProducts: any) => {
         this.cartProducts = cartProducts;
@@ -174,7 +172,7 @@ export class CatalogComponent implements OnInit {
     });
   }
 
-  onInputChange(): void {
+  public onInputChange(): void {
     if (this.minHandleValue > this.maxHandleValue) {
       this.minHandleValue = this.maxHandleValue;
     }
@@ -184,37 +182,34 @@ export class CatalogComponent implements OnInit {
     this.filterProducts();
   }
 
-  openModal(product: any): void {
+  public openModal(product: any): void {
     this.showModal = true;
     this.selectedProduct = product;
   }
 
-  closeModal(): void {
+  public closeModal(): void {
     this.showModal = false;
     this.selectedProduct = null;
   }
-  increaseQuantity(product: Product): void {
+  public increaseQuantity(product: Product): void {
     if (product && this.isInCart(product)) {
       this.updateCartQuantity(product, 1, 'increase');
     }
   }
 
-  decreaseQuantity(product: Product): void {
+  public decreaseQuantity(product: Product): void {
     if (product && this.isInCart(product)) {
       this.updateCartQuantity(product, 1, 'decrease');
     }
   }
-  updateCartQuantity(product: Product, quantity: number, action: string): void {
-    this.cartService
-      .updateProductQuantity(product.id, quantity, action, product.price)
-      .subscribe({
-        next: () => {
-          this.loadCart();
-        },
-        error: (err) => console.error(err),
-      });
+  public updateCartQuantity(product: Product, quantity: number, action: string): void {
+    this.cartService.updateProductQuantity(product.id, quantity, action, product.price).subscribe({
+      next: () => {
+        this.loadCart();
+      },
+    });
   }
-  addToCart(product?: Product): void {
+  public addToCart(product?: Product): void {
     this.selectedProduct = product ? product : this.selectedProduct;
     if (this.selectedProduct) {
       this.cartService
@@ -223,33 +218,28 @@ export class CatalogComponent implements OnInit {
           this.productQuantity,
           this.selectedProduct.price,
           this.selectedProduct.src,
-          this.selectedProduct.title,
+          this.selectedProduct.title
         )
         .subscribe({
           next: () => {
             this.loadCart();
           },
-          error: (err) => console.error(err),
         });
     }
   }
-  getQuantity(product: Product): string {
-    const productIncart = this.cartProducts.find(
-      (item) => item.productId === product.id,
-    );
+  public getQuantity(product: Product): string {
+    const productIncart = this.cartProducts.find((item) => item.productId === product.id);
     return productIncart.quantity.toString();
   }
-  isInCart(product: Product): boolean {
-    const productIncart = this.cartProducts.find(
-      (item) => item.productId === product.id,
-    );
+  public isInCart(product: Product): boolean {
+    const productIncart = this.cartProducts.find((item) => item.productId === product.id);
     if (productIncart) return true;
     return false;
   }
-  goToCart(): void {
+  public goToCart(): void {
     this.router.navigateByUrl('/cart');
   }
-  resetFilters(): void {
+  public resetFilters(): void {
     this.selectedColors = [];
     this.selectedTypes = [];
     this.minHandleValue = 2990;

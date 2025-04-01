@@ -13,25 +13,18 @@ import { Order } from '../models/order.model';
 @Component({
   selector: 'cart',
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    HttpClientModule,
-    HeaderComponent,
-    FooterComponent,
-  ],
+  imports: [CommonModule, FormsModule, HttpClientModule, HeaderComponent, FooterComponent],
   templateUrl: './cart.component.html',
 })
 export class CartComponent implements OnInit {
-  constructor(
+  public constructor(
     private cartService: CartService,
     private router: Router,
-    private orderService: OrderService,
+    private orderService: OrderService
   ) {}
 
-  ngOnInit(): void {
-    this.loadCart();
-    this.loadOrders();
+  public ngOnInit(): void {
+    this.loadData();
   }
 
   public cartItems: any[] = [];
@@ -52,56 +45,52 @@ export class CartComponent implements OnInit {
 
   public orderNumber = '';
 
-  toggleSelectAll(): void {
-    this.cartItems.forEach(
-      (product) => (product.selected = this.selectAllChecked),
-    );
+  public toggleSelectAll(): void {
+    this.cartItems.forEach((product) => (product.selected = this.selectAllChecked));
   }
 
-  onChangePaymentMethod(event: Event): void {
+  public onChangePaymentMethod(event: Event): void {
     const target = event.target as HTMLSelectElement;
     this.selectedPaymentMethod = target.value;
   }
 
-  openOrderModal(): void {
+  public openOrderModal(): void {
     this.showOrderModal = true;
   }
 
-  closeOrderModal(): void {
+  public closeOrderModal(): void {
     this.showOrderModal = false;
   }
-  openModal(product: any): void {
+  public openModal(product: any): void {
     this.selectedProduct = product;
     if (this.selectedProduct) {
       this.selectedProduct.id = product.productId;
     }
   }
 
-  closeModal(): void {
+  public closeModal(): void {
     this.selectedProduct = null;
   }
 
-  selectTab(tab: string): void {
+  public selectTab(tab: string): void {
     this.selectedTab = tab;
   }
 
-  loadCart(): void {
+  public loadCart(): void {
     this.cartService.getCart().subscribe({
       next: (items) => {
         this.cartItems = items.map((item) => ({ ...item, selected: false }));
       },
-      error: (err) => console.error(err),
     });
   }
-  loadOrders(): void {
+  public loadOrders(): void {
     this.orderService.getOrders().subscribe({
       next: (orders) => {
         this.orders = orders;
       },
-      error: (err) => console.error(err),
     });
   }
-  get total(): number {
+  public get total(): number {
     let total = 0;
     this.cartItems.forEach((product) => {
       total += product.subtotal;
@@ -109,69 +98,61 @@ export class CartComponent implements OnInit {
     return total;
   }
 
-  removeItem(): void {
+  public removeItem(): void {
     if (this.selectedProduct) {
       this.cartService.removeFromCart(this.selectedProduct.id).subscribe({
         next: () => {
           this.loadCart();
           this.closeModal();
         },
-        error: (err) => console.error(err),
       });
     }
   }
-  removeAllSelectedItems(): void {
-    const selectedProducts = this.cartItems.filter(
-      (product) => product.selected,
-    );
+  public removeAllSelectedItems(): void {
+    const selectedProducts = this.cartItems.filter((product) => product.selected);
 
     if (selectedProducts.length > 0) {
       selectedProducts.forEach((product) => {
         this.cartService.removeFromCart(product.id).subscribe({
           next: () => {
-            console.log(`Product with ID ${product.id} removed from cart.`);
             this.loadCart();
           },
-          error: (err) =>
-            console.error('Error removing product from cart:', err),
         });
       });
       this.cartItems = [];
     }
   }
-  removeAllItems(): void {
+  public removeAllItems(): void {
     this.cartItems.forEach((item) => {
       this.cartService.removeFromCart(item.productId).subscribe({
         next: () => {
-          this.ngOnInit();
+          this.loadData();
         },
-        error: (err) => console.error('Error removing product from cart:', err),
       });
     });
   }
 
-  increaseQuantity(product: any): void {
+  public increaseQuantity(product: any): void {
     if (product && this.isInCart(product)) {
       this.updateCartQuantity(product, 1, 'increase');
     }
   }
 
-  decreaseQuantity(product: any): void {
+  public decreaseQuantity(product: any): void {
     if (product && this.isInCart(product)) {
       this.updateCartQuantity(product, 1, 'decrease');
     }
   }
-  isInCart(product: any): boolean {
+  public isInCart(product: any): boolean {
     return this.cartService.isProductInCart(product.productId);
   }
-  updateCartQuantity(product: any, quantity: number, action: string): void {
+  public updateCartQuantity(product: any, quantity: number, action: string): void {
     this.cartService
       .updateProductQuantity(product.productId, quantity, action, product.price)
       .subscribe({
         next: () => {
           this.loadCart();
         },
-        error: (err) => console.error(err),
       });
   }
   public goToHome(): void {
@@ -180,16 +161,13 @@ export class CartComponent implements OnInit {
   public goToCatalog(): void {
     this.router.navigateByUrl('/catalog');
   }
-  addOrder(): void {
+  public addOrder(): void {
     const today = new Date();
     const date = today.toISOString().split('T')[0];
     this.orderNumber =
-      this.orders.length > 0
-        ? String(this.orders[this.orders.length - 1].id + 1)
-        : String(1);
+      this.orders.length > 0 ? String(this.orders[this.orders.length - 1].id + 1) : String(1);
     const newOrder: Order = {
-      id:
-        this.orders.length > 0 ? this.orders[this.orders.length - 1].id + 1 : 1,
+      id: this.orders.length > 0 ? this.orders[this.orders.length - 1].id + 1 : 1,
       date: date.replaceAll('-', '.'),
       quantity: this.cartItems.length,
       total: this.total,
@@ -199,7 +177,10 @@ export class CartComponent implements OnInit {
         this.openOrderModal();
         this.removeAllItems();
       },
-      error: (err) => console.error(err),
     });
+  }
+  private loadData(): void {
+    this.loadCart();
+    this.loadOrders();
   }
 }

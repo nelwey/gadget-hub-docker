@@ -30,10 +30,7 @@
       <div *ngIf="selectedTab === 'cart'">
         <!-- checkbox Выбрать все -->
 
-        <div
-          *ngIf="cartItems.length; else emptyCart"
-          class="bg-white my-8 p-4 rounded-lg"
-        >
+        <div *ngIf="cartItems.length; else emptyCart" class="bg-white my-8 p-4 rounded-lg">
           <div class="flex gap-3">
             <label class="text-base font-rubik">
               <input
@@ -49,20 +46,11 @@
               *ngIf="selectAllChecked"
               class="bg-transparent justify-center gap-3 inline-flex h-fit"
             >
-              <img
-                src="/assets/icons/deleteCart.svg"
-                class="self-center"
-                alt="deleteCart"
-              />
-              <p class="text-[#ff60c3] text-base font-rubik leading-normal">
-                Удалить все
-              </p>
+              <img src="/assets/icons/deleteCart.svg" class="self-center" alt="deleteCart" />
+              <p class="text-[#ff60c3] text-base font-rubik leading-normal">Удалить все</p>
             </button>
           </div>
-          <div
-            class="flex flex-col py-8 border-b-2"
-            *ngFor="let product of cartItems"
-          >
+          <div class="flex flex-col py-8 border-b-2" *ngFor="let product of cartItems">
             <!-- row -->
             <div class="flex gap-4">
               <!-- checkbox -->
@@ -74,9 +62,7 @@
                 />
               </label>
               <!-- img -->
-              <div
-                class="bg-[#e4e7eb] w-28 rounded-[20px] content-center h-28 p-5"
-              >
+              <div class="bg-[#e4e7eb] w-28 rounded-[20px] content-center h-28 p-5">
                 <img
                   [src]="product.src"
                   alt="product_image"
@@ -87,40 +73,22 @@
               <!-- buttons -->
               <div class="flex gap-6 w-40">
                 <div>
-                  <button
-                    (click)="decreaseQuantity(product)"
-                    class="size-6 bg-[#e4e7eb] rounded"
-                  >
-                    <img
-                      src="/assets/icons/minus.svg"
-                      class="mx-auto"
-                      alt="minus"
-                    />
+                  <button (click)="decreaseQuantity(product)" class="size-6 bg-[#e4e7eb] rounded">
+                    <img src="/assets/icons/minus.svg" class="mx-auto" alt="minus" />
                   </button>
                 </div>
 
-                <p
-                  class="text-black text-base font-normal font-inter leading-[30px]"
-                >
+                <p class="text-black text-base font-normal font-inter leading-[30px]">
                   {{ product.quantity }}
                 </p>
 
                 <div>
-                  <button
-                    (click)="increaseQuantity(product)"
-                    class="size-6 bg-[#e4e7eb] rounded"
-                  >
-                    <img
-                      src="/assets/icons/plus.svg"
-                      class="mx-auto"
-                      alt="plus"
-                    />
+                  <button (click)="increaseQuantity(product)" class="size-6 bg-[#e4e7eb] rounded">
+                    <img src="/assets/icons/plus.svg" class="mx-auto" alt="plus" />
                   </button>
                 </div>
               </div>
-              <p
-                class="text-black text-lg font-medium font-rubik leading-7 w-40"
-              >
+              <p class="text-black text-lg font-medium font-rubik leading-7 w-40">
                 {{ product.subtotal }} ₽
               </p>
 
@@ -128,22 +96,14 @@
                 (click)="openModal(product)"
                 class="bg-transparent justify-center gap-3 inline-flex h-fit"
               >
-                <img
-                  src="/assets/icons/deleteCart.svg"
-                  class="self-center"
-                  alt="deleteCart"
-                />
-                <p class="text-[#ff60c3] text-base font-rubik leading-normal">
-                  Удалить
-                </p>
+                <img src="/assets/icons/deleteCart.svg" class="self-center" alt="deleteCart" />
+                <p class="text-[#ff60c3] text-base font-rubik leading-normal">Удалить</p>
               </button>
             </div>
           </div>
           <!-- total -->
           <div class="flex justify-end py-4">
-            <p
-              class="text-black text-lg font-medium font-rubik leading-[31.20px]"
-            >
+            <p class="text-black text-lg font-medium font-rubik leading-[31.20px]">
               {{ cartItems.length }} товара на {{ total }} ₽
             </p>
           </div>
@@ -154,8 +114,7 @@
             <img src="/assets/icons/cart2.svg" alt="subtract" class="size-24" />
             <p class="font-medium text-2xl font-rubik">Пока пусто</p>
             <p class="text-base font-rubik text-[#474747] leading-normal">
-              Ознакомьтесь с новинками и хитами на главной <br />или найдите
-              нужное в каталоге
+              Ознакомьтесь с новинками и хитами на главной <br />или найдите нужное в каталоге
             </p>
             <!-- buttons -->
             <div class="flex">
@@ -163,9 +122,7 @@
                 (click)="goToCatalog()"
                 class="h-12 bg-[#115efb] rounded-lg justify-center items-center inline-flex px-5"
               >
-                <div
-                  class="text-white text-base font-medium font-rubik leading-normal"
-                >
+                <div class="text-white text-base font-medium font-rubik leading-normal">
                   Перейти в каталог
                 </div>
               </button>
@@ -173,9 +130,7 @@
                 (click)="goToHome()"
                 class="h-12 justify-center items-center inline-flex px-5"
               >
-                <div
-                  class="text-[#115efb] text-base font-medium font-rubik leading-normal"
-                >
+                <div class="text-[#115efb] text-base font-medium font-rubik leading-normal">
                   Главная страница
                 </div>
               </button>
@@ -187,9 +142,7 @@
           <p class="text-2xl font-medium font-rubik">Оформление заказа</p>
           <div class="bg-white my-8 p-4 rounded-lg flex flex-col gap-8">
             <div class="flex gap-5">
-              <div
-                class="flex-col justify-center items-start gap-1 inline-flex w-1/4"
-              >
+              <div class="flex-col justify-center items-start gap-1 inline-flex w-1/4">
                 <div class="text-sm font-inter leading-[21px]">Телефон</div>
                 <input
                   type="text"
@@ -197,12 +150,8 @@
                 />
               </div>
 
-              <div
-                class="flex-col justify-center items-start gap-1 inline-flex w-1/4"
-              >
-                <div class="text-black text-sm font-inter leading-[21px]">
-                  E-mail
-                </div>
+              <div class="flex-col justify-center items-start gap-1 inline-flex w-1/4">
+                <div class="text-black text-sm font-inter leading-[21px]">E-mail</div>
                 <input
                   type="email"
                   class="self-stretch px-4 py-3 bg-[#e4e7eb] rounded-lg justify-start items-center gap-2.5 inline-flex hover:border-blue-500 border"
@@ -240,16 +189,10 @@
               <label
                 class="block mb-2 text-black text-sm font-inter leading-[21px]"
                 [attr.for]="
-                  selectedTypeOrder === 'Самовывоз'
-                    ? 'paymentMethodSelect'
-                    : 'deliveryAddressInput'
+                  selectedTypeOrder === 'Самовывоз' ? 'paymentMethodSelect' : 'deliveryAddressInput'
                 "
               >
-                {{
-                  selectedTypeOrder === 'Самовывоз'
-                    ? 'Способ оплаты'
-                    : 'Адрес доставки'
-                }}
+                {{ selectedTypeOrder === 'Самовывоз' ? 'Способ оплаты' : 'Адрес доставки' }}
               </label>
 
               <select
@@ -259,9 +202,7 @@
                 (change)="onChangePaymentMethod($event)"
                 class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-4 py-3 bg-[#e4e7eb] w-1/4"
               >
-                <option [value]="null" disabled selected>
-                  Select an option
-                </option>
+                <option [value]="null" disabled selected>Select an option</option>
               </select>
 
               <input
@@ -279,9 +220,7 @@
                 value=""
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
               />
-              <label for="default-checkbox" class="ms-2 text-sm"
-                >Нужна упаковка</label
-              >
+              <label for="default-checkbox" class="ms-2 text-sm">Нужна упаковка</label>
             </div>
 
             <button
@@ -318,13 +257,8 @@
   *ngIf="selectedProduct"
   class="fixed inset-0 flex items-center justify-center z-50 bg-gray-900 bg-opacity-50"
 >
-  <div
-    class="bg-white w-[470px] h-[230px] p-14 rounded-[40px] shadow-lg relative"
-  >
-    <button
-      (click)="closeModal()"
-      class="absolute top-6 right-6 text-gray-500 hover:text-gray-700"
-    >
+  <div class="bg-white w-[470px] h-[230px] p-14 rounded-[40px] shadow-lg relative">
+    <button (click)="closeModal()" class="absolute top-6 right-6 text-gray-500 hover:text-gray-700">
       <img src="/assets/icons/close_window.svg" alt="close" class="w-4 h-4" />
     </button>
 
@@ -338,21 +272,13 @@
           (click)="closeModal()"
           class="px-5 h-12 bg-white rounded-lg justify-center items-center inline-flex"
         >
-          <div
-            class="text-[#ff60c3] text-base font-medium font-rubik leading-normal"
-          >
-            Отмена
-          </div>
+          <div class="text-[#ff60c3] text-base font-medium font-rubik leading-normal">Отмена</div>
         </button>
         <button
           (click)="removeItem()"
           class="px-5 h-12 bg-[#115efb] rounded-lg justify-center items-center inline-flex"
         >
-          <div
-            class="text-white text-base font-medium font-rubik leading-normal"
-          >
-            Да, удалить
-          </div>
+          <div class="text-white text-base font-medium font-rubik leading-normal">Да, удалить</div>
         </button>
       </div>
     </div>
@@ -364,9 +290,7 @@
   *ngIf="showOrderModal"
   class="fixed inset-0 flex items-center justify-center z-50 bg-gray-900 bg-opacity-50"
 >
-  <div
-    class="bg-white w-[500px] h-[320px] p-14 rounded-[40px] shadow-lg relative"
-  >
+  <div class="bg-white w-[500px] h-[320px] p-14 rounded-[40px] shadow-lg relative">
     <button
       (click)="closeOrderModal()"
       class="absolute top-6 right-6 text-gray-500 hover:text-gray-700"
@@ -381,8 +305,7 @@
       <p class="text-2xl font-medium font-rubik">Спасибо за заказ!</p>
       <p class="text-base font-rubik">Номер заказа {{ orderNumber }}.</p>
       <p class="text-base font-rubik">
-        Мы свяжемся с вами в течение 10 минут, чтобы уточнить удобное для вас
-        время доставки
+        Мы свяжемся с вами в течение 10 минут, чтобы уточнить удобное для вас время доставки
       </p>
       <div class="flex justify-end">
         <button

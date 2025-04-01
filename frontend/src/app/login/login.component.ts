@@ -10,27 +10,20 @@ import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'login',
   standalone: true,
-  imports: [
-    HttpClientModule,
-    CommonModule,
-    HeaderComponent,
-    FooterComponent,
-    FormsModule,
-  ],
+  imports: [HttpClientModule, CommonModule, HeaderComponent, FooterComponent, FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  constructor(
+  public constructor(
     private authService: AuthService,
-    private router: Router,
+    private router: Router
   ) {}
   public email = '';
   public password = '';
   public errorMessage = '';
 
-  login(): void {
-    console.log(`login: ${this.email}, ${this.password}`);
+  public login(): void {
     this.authService.login(this.email, this.password).subscribe({
       next: () => this.router.navigate(['/catalog']),
       error: (err) => (this.errorMessage = err),

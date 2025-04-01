@@ -14,12 +14,12 @@ export class HeaderComponent implements OnInit {
   public isLoggedIn = false;
   public currentRoute = '';
 
-  cartQuantity = 0;
+  public cartQuantity = 0;
 
-  constructor(
+  public constructor(
     public authService: AuthService,
     private router: Router,
-    private cartService: CartService,
+    private cartService: CartService
   ) {
     this.router.events.subscribe(() => {
       this.currentRoute = this.router.url;
@@ -38,14 +38,14 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('/cart');
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.isLoggedIn = this.authService.isLoggedIn();
     this.cartService.currentCartQuantity.subscribe((quantity) => {
       this.cartQuantity = quantity;
     });
   }
 
-  logout(): void {
+  public logout(): void {
     this.authService.logout();
     this.router.navigate(['/login']);
   }

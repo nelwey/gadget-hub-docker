@@ -6,35 +6,33 @@ import { map } from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private apiUrl = 'http://localhost:8080/api/auth';
-  constructor(private http: HttpClient) {}
+  public constructor(private http: HttpClient) {}
 
-  login(email: string, password: string): Observable<any> {
-    return this.http
-      .post<any>(`${this.apiUrl}/login`, { email, password })
-      .pipe(
-        map((response) => {
-          if (response.token) {
-            localStorage.setItem('token', response.token);
-            localStorage.setItem('userId', response.userId);
-          }
-          return response;
-        }),
-      );
+  public login(email: string, password: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/login`, { email, password }).pipe(
+      map((response) => {
+        if (response.token) {
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('userId', response.userId);
+        }
+        return response;
+      })
+    );
   }
 
-  logout(): void {
+  public logout(): void {
     localStorage.removeItem('token');
     localStorage.removeItem('userId');
   }
 
-  isLoggedIn(): boolean {
+  public isLoggedIn(): boolean {
     return !!localStorage.getItem('token');
   }
 
-  getToken(): string | null {
+  public getToken(): string | null {
     return localStorage.getItem('token');
   }
-  getUserId(): string | null {
+  public getUserId(): string | null {
     return localStorage.getItem('userId');
   }
 }
