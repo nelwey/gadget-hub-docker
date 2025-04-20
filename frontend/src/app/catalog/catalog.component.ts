@@ -95,6 +95,10 @@ export class CatalogComponent implements OnInit {
         this.filteredProducts = [...products];
         this.updatePaginatedProducts();
       },
+      error: () => {
+        this.products = [];
+        this.filteredProducts = [];
+      },
     });
   }
 
@@ -140,6 +144,7 @@ export class CatalogComponent implements OnInit {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
     this.paginatedProducts = this.filteredProducts.slice(startIndex, endIndex);
+    this.showPrevButton = this.currentPage > 1;
   }
 
   public goToPage(page: number): void {
@@ -168,6 +173,9 @@ export class CatalogComponent implements OnInit {
     this.cartService.getCart().subscribe({
       next: (cartProducts: any) => {
         this.cartProducts = cartProducts;
+      },
+      error: () => {
+        this.cartProducts = [];
       },
     });
   }

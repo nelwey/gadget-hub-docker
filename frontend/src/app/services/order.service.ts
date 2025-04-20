@@ -5,7 +5,7 @@ import { Order } from '../models/order.model';
 
 @Injectable({ providedIn: 'root' })
 export class OrderService {
-  private apiUrl = 'http://localhost:8080/api/order';
+  public apiUrl = 'http://localhost:8080/api/order';
   public constructor(private http: HttpClient) {}
 
   public getOrders(): Observable<Order[]> {

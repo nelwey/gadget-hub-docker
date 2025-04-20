@@ -81,6 +81,9 @@ export class CartComponent implements OnInit {
       next: (items) => {
         this.cartItems = items.map((item) => ({ ...item, selected: false }));
       },
+      error: () => {
+        this.cartItems = [];
+      },
     });
   }
   public loadOrders(): void {
@@ -179,7 +182,7 @@ export class CartComponent implements OnInit {
       },
     });
   }
-  private loadData(): void {
+  public loadData(): void {
     this.loadCart();
     this.loadOrders();
   }

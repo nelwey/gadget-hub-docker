@@ -6,13 +6,13 @@ import { AuthService } from './auth.service';
 @Injectable({ providedIn: 'root' })
 export class CartService {
   public constructor(
-    private http: HttpClient,
-    private authService: AuthService
+    public http: HttpClient,
+    public authService: AuthService
   ) {}
-  private apiUrl = 'http://localhost:8080/api/cart';
-  private cart: { productId: number; quantity: number }[] = [];
+  public apiUrl = 'http://localhost:8080/api/cart';
+  public cart: { productId: number; quantity: number }[] = [];
 
-  private cartQuantitySource = new BehaviorSubject<number>(0);
+  public cartQuantitySource = new BehaviorSubject<number>(0);
   public currentCartQuantity = this.cartQuantitySource.asObservable();
 
   public getCart(): Observable<any[]> {

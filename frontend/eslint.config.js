@@ -20,7 +20,6 @@ module.exports = tseslint.config(
     processor: angular.processInlineTemplates,
     rules: {
 
-
       // Best practices
       "no-console": "warn", // Discourage console logs
       "no-debugger": "error", // Disallow debugger statements
@@ -60,8 +59,6 @@ module.exports = tseslint.config(
       "@angular-eslint/no-queries-metadata-property": "warn", // Discourage using @ViewChild() in metadata
       "@angular-eslint/template/banana-in-box": "off", // Enforce proper syntax for two-way data binding
       "@angular-eslint/template/no-negated-async": "off", // Prevent negation of async pipe results
-
-
 
 
       // Existing rules
@@ -141,16 +138,15 @@ module.exports = tseslint.config(
     rules: {
       "@angular-eslint/template/interactive-supports-focus": "warn",
       "@angular-eslint/template/eqeqeq": "warn",
-
-      // "@angular-eslint/template/interactive-supports-focus": "warn",
-      // "@angular-eslint/template/eqeqeq": "warn",
-      // "@angular-eslint/template/no-positive-tabindex": "warn",
-      // "@angular-eslint/template/alt-text": "warn", // Enforce alt attributes on images for accessibility
-      // "@angular-eslint/template/no-autofocus": "warn", // Prevent the use of the autofocus attribute
-      // "@angular-eslint/template/no-distracting-elements": "warn", // Avoid distracting elements like <blink> and <marquee>
-      // "@angular-eslint/template/no-inline-styles": "warn", // Discourage inline styles for maintainability
-      // "@angular-eslint/template/no-self-closing": "warn", // Enforce proper closing of elements
-      // "@angular-eslint/template/prefer-ng-container": "warn", // Encourage using <ng-container> instead of unnecessary elements
+      "@angular-eslint/template/interactive-supports-focus": "warn",
+      "@angular-eslint/template/eqeqeq": "warn",
+      "@angular-eslint/template/no-positive-tabindex": "warn",
+      "@angular-eslint/template/alt-text": "warn", // Enforce alt attributes on images for accessibility
+      "@angular-eslint/template/no-autofocus": "warn", // Prevent the use of the autofocus attribute
+      "@angular-eslint/template/no-distracting-elements": "warn", // Avoid distracting elements like <blink> and <marquee>
+      "@angular-eslint/template/no-inline-styles": "off", // Discourage inline styles for maintainability
+      "@angular-eslint/template/no-self-closing": "off", // Enforce proper closing of elements
+      "@angular-eslint/template/prefer-ng-container": "off", // Encourage using <ng-container> instead of unnecessary elements
 
 
       "prettier/prettier": [
